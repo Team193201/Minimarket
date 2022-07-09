@@ -1,2 +1,2 @@
 # Minimarket
-Programming challenge2 
+Programming challenge
