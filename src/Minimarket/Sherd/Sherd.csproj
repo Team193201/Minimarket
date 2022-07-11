@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Folder Include="Command\" />
+    <Folder Include="Dto\" />
     <Folder Include="Query\" />
   </ItemGroup>
 
