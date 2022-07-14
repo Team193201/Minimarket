@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Entities.Interface;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Categories
+    public class Category : IEntity
     {
         [Display(Name = "شناسه دسته"), Required]
         public int CategoryID { get; set; }

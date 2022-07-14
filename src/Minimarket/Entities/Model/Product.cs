@@ -1,31 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Entities.Interface;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Products
+    public class Product: IEntity
     {
-        [Display(Name ="کد محصول"),Required]
+        [Display(Name = "کد محصول"), Required]
         public int ProductID { get; set; }
 
         [Display(Name = "نام محصول"), Required]
         public string ProductName { get; set; }
 
         [Display(Name = "دسته بندی"), Required]
-        public Nullable<int> CategoryID { get; set; }
+        public int? CategoryID { get; set; }
 
         [Display(Name = "مقدار در واحد"), Required]
         public string QuantityPerUnit { get; set; }
 
         [Display(Name = "قیمت واحد"), Required]
-        public Nullable<decimal> UnitPrice { get; set; }
+        public decimal? UnitPrice { get; set; }
 
         [Display(Name = "موجودی واحد"), Required]
-        public Nullable<short> UnitsInStock { get; set; }
+        public short? UnitsInStock { get; set; }
     }
 }
