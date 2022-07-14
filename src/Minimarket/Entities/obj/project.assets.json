@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Programmer\\.nuget\\packages\\": {}
+    "C:\\Users\\Sahar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\githup\\Minimarket\\src\\Minimarket\\Entities\\Entities.csproj",
+      "projectUniqueName": "C:\\Users\\Sahar\\Source\\Repos\\Team193201\\Minimarket\\src\\Minimarket\\Entities\\Entities.csproj",
       "projectName": "Entities",
-      "projectPath": "E:\\githup\\Minimarket\\src\\Minimarket\\Entities\\Entities.csproj",
-      "packagesPath": "C:\\Users\\Programmer\\.nuget\\packages\\",
-      "outputPath": "E:\\githup\\Minimarket\\src\\Minimarket\\Entities\\obj\\",
+      "projectPath": "C:\\Users\\Sahar\\Source\\Repos\\Team193201\\Minimarket\\src\\Minimarket\\Entities\\Entities.csproj",
+      "packagesPath": "C:\\Users\\Sahar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Sahar\\Source\\Repos\\Team193201\\Minimarket\\src\\Minimarket\\Entities\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Programmer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Sahar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\Minimarket",
+    "\\src\\Minimarket\\Entities"
   ],
-  "SelectedNode": "\\src",
+  "SelectedNode": "\\src\\Minimarket\\Minimarket.sln",
   "PreviewInSolutionExplorer": false
 }
