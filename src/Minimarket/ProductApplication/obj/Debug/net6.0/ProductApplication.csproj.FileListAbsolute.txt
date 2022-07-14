@@ -1,0 +1,12 @@
+E:\githup\Minimarket\src\Minimarket\ProductApplication\bin\Debug\net6.0\ProductApplication.deps.json
+E:\githup\Minimarket\src\Minimarket\ProductApplication\bin\Debug\net6.0\ProductApplication.dll
+E:\githup\Minimarket\src\Minimarket\ProductApplication\bin\Debug\net6.0\ProductApplication.pdb
+E:\githup\Minimarket\src\Minimarket\ProductApplication\obj\Debug\net6.0\ProductApplication.csproj.AssemblyReference.cache
+E:\githup\Minimarket\src\Minimarket\ProductApplication\obj\Debug\net6.0\ProductApplication.GeneratedMSBuildEditorConfig.editorconfig
+E:\githup\Minimarket\src\Minimarket\ProductApplication\obj\Debug\net6.0\ProductApplication.AssemblyInfoInputs.cache
+E:\githup\Minimarket\src\Minimarket\ProductApplication\obj\Debug\net6.0\ProductApplication.AssemblyInfo.cs
+E:\githup\Minimarket\src\Minimarket\ProductApplication\obj\Debug\net6.0\ProductApplication.csproj.CoreCompileInputs.cache
+E:\githup\Minimarket\src\Minimarket\ProductApplication\obj\Debug\net6.0\ProductApplication.dll
+E:\githup\Minimarket\src\Minimarket\ProductApplication\obj\Debug\net6.0\refint\ProductApplication.dll
+E:\githup\Minimarket\src\Minimarket\ProductApplication\obj\Debug\net6.0\ProductApplication.pdb
+E:\githup\Minimarket\src\Minimarket\ProductApplication\obj\Debug\net6.0\ref\ProductApplication.dll
