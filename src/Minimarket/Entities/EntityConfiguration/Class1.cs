@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Entities.Model;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Entities.EntityConfiguration
 {
-    internal class Class1
+    public class Class1 : IEntityTypeConfiguration<User>
     {
+        public void Configure(EntityTypeBuilder<User> builder)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

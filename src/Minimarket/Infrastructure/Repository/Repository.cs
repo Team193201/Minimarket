@@ -12,5 +12,15 @@ namespace Infrastructure.Repository
         {
             _appDbContext = appDbContext;
         }
+       
+        public void AddEntity(T model)
+        {
+
+        }
+
+        public void Update(T model)
+        {
+
+        }
     }
 }
