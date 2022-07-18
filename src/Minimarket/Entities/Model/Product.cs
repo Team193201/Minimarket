@@ -3,19 +3,19 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Entities
 {
-    public class Product: IEntity
+    public class Product : IEntity
     {
         [Display(Name = "کد محصول"), Required]
-        public int ProductID { get; set; }
+        public int ProductId { get; set; }
 
         [Display(Name = "نام محصول"), Required]
-        public string ProductName { get; set; }
+        public string? ProductName { get; set; }
 
         [Display(Name = "دسته بندی"), Required]
         public int? CategoryID { get; set; }
 
         [Display(Name = "مقدار در واحد"), Required]
-        public string QuantityPerUnit { get; set; }
+        public string? QuantityPerUnit { get; set; }
 
         [Display(Name = "قیمت واحد"), Required]
         public decimal? UnitPrice { get; set; }

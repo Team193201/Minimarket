@@ -5,5 +5,6 @@ namespace Entities.Model
 {
     public class Role : IdentityRole<Guid>, IEntity
     {
+        public string? Description { get; set; }
     }
 }
