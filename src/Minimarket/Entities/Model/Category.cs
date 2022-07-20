@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Categories
+    public class Category
     {
         [Display(Name = "شناسه دسته"), Required]
         public int CategoryID { get; set; }
@@ -20,5 +20,7 @@ namespace Entities
 
         [Display(Name = "تصویر"), Required]
         public byte[] Picture { get; set; }
+
+        public ICollection< Product> Products { get; set; }  
     }
 }

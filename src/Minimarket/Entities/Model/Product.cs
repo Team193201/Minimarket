@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Products
+    public class Product
     {
         [Display(Name ="کد محصول"),Required]
         public int ProductID { get; set; }
@@ -27,5 +27,7 @@ namespace Entities
 
         [Display(Name = "موجودی واحد"), Required]
         public Nullable<short> UnitsInStock { get; set; }
+
+        public Category category { get; set; }  
     }
 }
