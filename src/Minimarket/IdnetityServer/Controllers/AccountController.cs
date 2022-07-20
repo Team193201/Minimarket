@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace IdnetityServer.Controllers
 {
@@ -12,7 +11,7 @@ namespace IdnetityServer.Controllers
 
         }
 
-        public async Task<IActionResult>Login(CancellationToken cancellationToken)
+        public async Task<IActionResult> Login(CancellationToken cancellationToken)
         {
             return await Task.FromResult(Ok());
         }
@@ -22,7 +21,7 @@ namespace IdnetityServer.Controllers
             return await Task.FromResult(Ok());
         }
 
-        public async Task<IActionResult>ForgotPassWord()
+        public async Task<IActionResult> ForgotPassWord()
         {
             return await Task.FromResult(Ok());
         }
