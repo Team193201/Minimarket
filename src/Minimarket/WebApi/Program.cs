@@ -1,5 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
+
+//--------------------------- Services --------------------------------
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -9,6 +11,8 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+
+//--------------------------- Configure --------------------------------
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

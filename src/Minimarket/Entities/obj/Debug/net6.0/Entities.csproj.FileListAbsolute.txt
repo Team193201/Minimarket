@@ -1,0 +1,12 @@
+E:\githup\Minimarket\src\Minimarket\Entities\bin\Debug\net6.0\Entities.deps.json
+E:\githup\Minimarket\src\Minimarket\Entities\bin\Debug\net6.0\Entities.dll
+E:\githup\Minimarket\src\Minimarket\Entities\bin\Debug\net6.0\Entities.pdb
+E:\githup\Minimarket\src\Minimarket\Entities\obj\Debug\net6.0\Entities.csproj.AssemblyReference.cache
+E:\githup\Minimarket\src\Minimarket\Entities\obj\Debug\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+E:\githup\Minimarket\src\Minimarket\Entities\obj\Debug\net6.0\Entities.AssemblyInfoInputs.cache
+E:\githup\Minimarket\src\Minimarket\Entities\obj\Debug\net6.0\Entities.AssemblyInfo.cs
+E:\githup\Minimarket\src\Minimarket\Entities\obj\Debug\net6.0\Entities.csproj.CoreCompileInputs.cache
+E:\githup\Minimarket\src\Minimarket\Entities\obj\Debug\net6.0\Entities.dll
+E:\githup\Minimarket\src\Minimarket\Entities\obj\Debug\net6.0\refint\Entities.dll
+E:\githup\Minimarket\src\Minimarket\Entities\obj\Debug\net6.0\Entities.pdb
+E:\githup\Minimarket\src\Minimarket\Entities\obj\Debug\net6.0\ref\Entities.dll

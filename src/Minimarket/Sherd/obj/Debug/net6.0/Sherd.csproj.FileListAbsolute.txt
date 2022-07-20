@@ -1,0 +1,12 @@
+E:\githup\Minimarket\src\Minimarket\Sherd\bin\Debug\net6.0\Sherd.deps.json
+E:\githup\Minimarket\src\Minimarket\Sherd\bin\Debug\net6.0\Sherd.dll
+E:\githup\Minimarket\src\Minimarket\Sherd\bin\Debug\net6.0\Sherd.pdb
+E:\githup\Minimarket\src\Minimarket\Sherd\obj\Debug\net6.0\Sherd.csproj.AssemblyReference.cache
+E:\githup\Minimarket\src\Minimarket\Sherd\obj\Debug\net6.0\Sherd.GeneratedMSBuildEditorConfig.editorconfig
+E:\githup\Minimarket\src\Minimarket\Sherd\obj\Debug\net6.0\Sherd.AssemblyInfoInputs.cache
+E:\githup\Minimarket\src\Minimarket\Sherd\obj\Debug\net6.0\Sherd.AssemblyInfo.cs
+E:\githup\Minimarket\src\Minimarket\Sherd\obj\Debug\net6.0\Sherd.csproj.CoreCompileInputs.cache
+E:\githup\Minimarket\src\Minimarket\Sherd\obj\Debug\net6.0\Sherd.dll
+E:\githup\Minimarket\src\Minimarket\Sherd\obj\Debug\net6.0\refint\Sherd.dll
+E:\githup\Minimarket\src\Minimarket\Sherd\obj\Debug\net6.0\Sherd.pdb
+E:\githup\Minimarket\src\Minimarket\Sherd\obj\Debug\net6.0\ref\Sherd.dll
