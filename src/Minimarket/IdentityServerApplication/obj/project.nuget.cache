@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "A1VZuk4oKFF3Xng6GiWS9ezhuWE/caWgqTzeGqDBPlWp2TLgLWhc3a8rWro9ZILLVhEnP+6BHQHzPup0KGT+9A==",
+  "dgSpecHash": "hihq6Z1R/jOos+9nWG5vN26ElH5B7ewEzVJPMshtGNc+lYSTIFYeLS+FTZnEan6Et/GauaEWjeWnRdIWp2NTpw==",
   "success": true,
   "projectFilePath": "E:\\githup\\Minimarket\\src\\Minimarket\\IdentityServerApplication\\IdentityServerApplication.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Programmer\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\Programmer\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\Programmer\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
     "C:\\Users\\Programmer\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\Programmer\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Programmer\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",
