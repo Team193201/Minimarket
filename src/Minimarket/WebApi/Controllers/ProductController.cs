@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MediatR;
+using ProductApplication.Query;
+using System.Net;
 
 namespace WebApi.Controllers
 {
@@ -6,10 +9,19 @@ namespace WebApi.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        [HttpGet("GetProduct")]
-        public async Task<IActionResult> Get(int id, CancellationToken cancellationToken)
+        private IMediator _mediator;
+        public ProductController(IMediator mediator)
         {
-            return await Task.FromResult(Ok());
+            _mediator = mediator;
+        }
+
+        [HttpGet("GetProduct")]
+        public async Task<IActionResult> Get(Guid id, CancellationToken cancellationToken)
+        {
+            var result = await _mediator.Send(new GetProductNameQuery { ProductId = id });
+            //   return result;
+            return Ok(new ReusltApi { data = result,
+                error=string.Empty,HttpStatusCode=HttpStatusCode.OK }) ;
         }
 
         [HttpGet("GetProducts")]
@@ -36,4 +48,12 @@ namespace WebApi.Controllers
             return await Task.FromResult(Ok());
         }
     }
+
+
+    public class ReusltApi
+    {
+        public object data { get; set; }
+        public string error { get; set; }
+        public HttpStatusCode HttpStatusCode { get;set;}
+}
 }
