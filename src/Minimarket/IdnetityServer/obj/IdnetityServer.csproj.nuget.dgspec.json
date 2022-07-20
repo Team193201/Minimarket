@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\githup\\Minimarket\\src\\Minimarket\\IdnetityServer\\IdnetityServer.csproj": {}
+    "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\IdnetityServer\\IdnetityServer.csproj": {}
   },
   "projects": {
-    "E:\\githup\\Minimarket\\src\\Minimarket\\Entities\\Entities.csproj": {
+    "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\githup\\Minimarket\\src\\Minimarket\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "E:\\githup\\Minimarket\\src\\Minimarket\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\Programmer\\.nuget\\packages\\",
-        "outputPath": "E:\\githup\\Minimarket\\src\\Minimarket\\Entities\\obj\\",
+        "projectPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\Sahar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Programmer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sahar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -76,21 +76,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\githup\\Minimarket\\src\\Minimarket\\IdentityServerApplication\\IdentityServerApplication.csproj": {
+    "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\IdentityServerApplication\\IdentityServerApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\githup\\Minimarket\\src\\Minimarket\\IdentityServerApplication\\IdentityServerApplication.csproj",
+        "projectUniqueName": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\IdentityServerApplication\\IdentityServerApplication.csproj",
         "projectName": "IdentityServerApplication",
-        "projectPath": "E:\\githup\\Minimarket\\src\\Minimarket\\IdentityServerApplication\\IdentityServerApplication.csproj",
-        "packagesPath": "C:\\Users\\Programmer\\.nuget\\packages\\",
-        "outputPath": "E:\\githup\\Minimarket\\src\\Minimarket\\IdentityServerApplication\\obj\\",
+        "projectPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\IdentityServerApplication\\IdentityServerApplication.csproj",
+        "packagesPath": "C:\\Users\\Sahar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\IdentityServerApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Programmer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sahar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -104,8 +104,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\githup\\Minimarket\\src\\Minimarket\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "E:\\githup\\Minimarket\\src\\Minimarket\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -140,21 +140,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\githup\\Minimarket\\src\\Minimarket\\IdnetityServer\\IdnetityServer.csproj": {
+    "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\IdnetityServer\\IdnetityServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\githup\\Minimarket\\src\\Minimarket\\IdnetityServer\\IdnetityServer.csproj",
+        "projectUniqueName": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\IdnetityServer\\IdnetityServer.csproj",
         "projectName": "IdnetityServer",
-        "projectPath": "E:\\githup\\Minimarket\\src\\Minimarket\\IdnetityServer\\IdnetityServer.csproj",
-        "packagesPath": "C:\\Users\\Programmer\\.nuget\\packages\\",
-        "outputPath": "E:\\githup\\Minimarket\\src\\Minimarket\\IdnetityServer\\obj\\",
+        "projectPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\IdnetityServer\\IdnetityServer.csproj",
+        "packagesPath": "C:\\Users\\Sahar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\IdnetityServer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Programmer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sahar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -168,8 +168,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\githup\\Minimarket\\src\\Minimarket\\IdentityServerApplication\\IdentityServerApplication.csproj": {
-                "projectPath": "E:\\githup\\Minimarket\\src\\Minimarket\\IdentityServerApplication\\IdentityServerApplication.csproj"
+              "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\IdentityServerApplication\\IdentityServerApplication.csproj": {
+                "projectPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\IdentityServerApplication\\IdentityServerApplication.csproj"
               }
             }
           }
@@ -207,21 +207,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\githup\\Minimarket\\src\\Minimarket\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\githup\\Minimarket\\src\\Minimarket\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "E:\\githup\\Minimarket\\src\\Minimarket\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Programmer\\.nuget\\packages\\",
-        "outputPath": "E:\\githup\\Minimarket\\src\\Minimarket\\Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Sahar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Programmer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sahar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -235,8 +235,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\githup\\Minimarket\\src\\Minimarket\\Entities\\Entities.csproj": {
-                "projectPath": "E:\\githup\\Minimarket\\src\\Minimarket\\Entities\\Entities.csproj"
+              "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\Entities\\Entities.csproj"
               }
             }
           }
@@ -265,7 +265,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -341,19 +341,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Programmer\\.nuget\\packages\\": {}
+    "C:\\Users\\Sahar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\githup\\Minimarket\\src\\Minimarket\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "E:\\githup\\Minimarket\\src\\Minimarket\\WebApi\\WebApi.csproj",
-      "packagesPath": "C:\\Users\\Programmer\\.nuget\\packages\\",
-      "outputPath": "E:\\githup\\Minimarket\\src\\Minimarket\\WebApi\\obj\\",
+      "projectPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\WebApi\\WebApi.csproj",
+      "packagesPath": "C:\\Users\\Sahar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Programmer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Sahar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -367,8 +367,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\githup\\Minimarket\\src\\Minimarket\\ProductApplication\\ProductApplication.csproj": {
-              "projectPath": "E:\\githup\\Minimarket\\src\\Minimarket\\ProductApplication\\ProductApplication.csproj"
+            "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\ProductApplication\\ProductApplication.csproj": {
+              "projectPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\ProductApplication\\ProductApplication.csproj"
             }
           }
         }
@@ -406,7 +406,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

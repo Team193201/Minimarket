@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "hemn0qACIHRhmuoplNw+bwiy95LIcAPs7zqUqPH+HRWRK97FDxP0VNsZqd574ESPoNABENmPzond7W5NijnAPg==",
+  "dgSpecHash": "SStJhQAQTh7qnwZFMA1KXDo3jmV45gdj209zpUTqE7Zbu7UJE71AQeR8uvhm1fAbKd/75nAjuSQtBqxwnzyuQA==",
   "success": true,
-  "projectFilePath": "E:\\githup\\Minimarket\\src\\Minimarket\\ProductApplication\\ProductApplication.csproj",
+  "projectFilePath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\ProductApplication\\ProductApplication.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Programmer\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
-    "C:\\Users\\Programmer\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
-    "C:\\Users\\Programmer\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
-    "C:\\Users\\Programmer\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+    "C:\\Users\\Sahar\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\Sahar\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\Sahar\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
+    "C:\\Users\\Sahar\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }
