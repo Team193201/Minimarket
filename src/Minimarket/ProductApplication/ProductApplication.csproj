@@ -11,9 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Command\Handler\" />
     <Folder Include="Event\Handler\" />
-    <Folder Include="Query\Handler\" />
   </ItemGroup>
 
 </Project>

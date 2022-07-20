@@ -8,5 +8,7 @@ namespace Entities.Model
     {
         [Display(Name = "شرح")]
         public string? Description { get; set; }
+
+        public ICollection<UserRole> UserRoles { get; set; }
     }
 }

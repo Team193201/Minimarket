@@ -16,5 +16,7 @@ namespace Entities.Model
 
         public DateTime? AddTime { get; set; }
         public DateTime? ModifieTime { get; set; }
+
+        public ICollection<UserRole>UserRoles { get; set; }
     }
 }

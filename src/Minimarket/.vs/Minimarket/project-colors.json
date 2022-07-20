@@ -10,7 +10,12 @@
       "ProjectGuid": "d8722592-ff92-4368-90af-48bac44d7325",
       "DisplayName": "Entities",
       "ColorIndex": 1
+    },
+    "a05350f9-2331-45be-8980-3f9ec5d5fe85": {
+      "ProjectGuid": "a05350f9-2331-45be-8980-3f9ec5d5fe85",
+      "DisplayName": "Product",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }
