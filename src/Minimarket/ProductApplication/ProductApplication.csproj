@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Command\Handler\" />
+    <Folder Include="Event\Handler\" />
+    <Folder Include="Query\Handler\" />
+  </ItemGroup>
+
 </Project>

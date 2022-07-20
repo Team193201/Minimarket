@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
 {
@@ -8,31 +7,31 @@ namespace WebApi.Controllers
     public class ProductController : ControllerBase
     {
         [HttpGet("GetProduct")]
-        public async Task<IActionResult> Get(int id)
+        public async Task<IActionResult> Get(int id, CancellationToken cancellationToken)
         {
-            return await  Task.FromResult(Ok());
+            return await Task.FromResult(Ok());
         }
 
         [HttpGet("GetProducts")]
-        public async Task<IActionResult>Get(int task , int skip)
+        public async Task<IActionResult> Get(int task, int skip, CancellationToken cancellationToken)
         {
             return await Task.FromResult(Ok());
         }
 
         [HttpPost("PostProduct")]
-        public async Task<IActionResult> Post()
+        public async Task<IActionResult> Post(CancellationToken cancellationToken)
         {
             return await Task.FromResult(Ok());
         }
 
         [HttpPut("PutProduct")]
-        public async Task<IActionResult>Put(int id)
+        public async Task<IActionResult> Put(int id, CancellationToken cancellationToken)
         {
             return await Task.FromResult(Ok());
         }
 
         [HttpDelete("DeleteProduct")]
-        public async  Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(int id, CancellationToken cancellationToken)
         {
             return await Task.FromResult(Ok());
         }
