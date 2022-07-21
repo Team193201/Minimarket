@@ -15,7 +15,32 @@
       "ProjectGuid": "a05350f9-2331-45be-8980-3f9ec5d5fe85",
       "DisplayName": "Product",
       "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "676c0532-ae09-40ac-8956-383066ee8cc7": {
+      "ProjectGuid": "676c0532-ae09-40ac-8956-383066ee8cc7",
+      "DisplayName": "IdentityServerApplication",
+      "ColorIndex": 3
+    },
+    "a1776b03-dade-4464-816e-f5aa1b9bc9a6": {
+      "ProjectGuid": "a1776b03-dade-4464-816e-f5aa1b9bc9a6",
+      "DisplayName": "IdnetityServer",
+      "ColorIndex": 4
+    },
+    "cdd6225f-a4e2-4b97-821a-4501f0c5d719": {
+      "ProjectGuid": "cdd6225f-a4e2-4b97-821a-4501f0c5d719",
+      "DisplayName": "ProductApplication",
+      "ColorIndex": 5
+    },
+    "637d09ae-d27f-46c5-97bf-c7cd3dd7d065": {
+      "ProjectGuid": "637d09ae-d27f-46c5-97bf-c7cd3dd7d065",
+      "DisplayName": "Infrastructure",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 7
 }
