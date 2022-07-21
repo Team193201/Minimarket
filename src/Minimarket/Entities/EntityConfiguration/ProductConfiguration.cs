@@ -11,7 +11,7 @@ namespace Entities.EntityConfiguration
             // builder.ToTable("","");
             builder.HasOne(c => c.category)
                 .WithMany(p => p.Products)
-                .HasForeignKey(p => p.CategoryID)
+                .HasForeignKey(p => p.CategoryId)
                 .OnDelete(DeleteBehavior.Cascade)
                 .IsRequired();
         }
