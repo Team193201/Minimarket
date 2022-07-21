@@ -44,9 +44,29 @@ namespace Infrastructure.Repository
 
         #endregion
 
-        //method update  
+        #region Update
+        public void UpdateEntity(T model)
+        {
+            entity.Update(model);
+        }
+        public void UpdateRangeEntities(IEnumerable<T> models)
+        {
+            entity.UpdateRange(models);
+        }
 
-        // method delete 
+        #endregion
+
+        #region Delete
+        public void DeleteEntity(T model)
+        {
+            entity.Remove(model);
+        }
+        public void DeleteRangeEntities(IEnumerable<T> models)
+        {
+            entity.RemoveRange(models);
+        }
+        #endregion
+
 
 
         // rep role

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.Interface;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Product
+    public class Product:IEntity
     {
         [Display(Name ="کد محصول"),Required]
         public int ProductId { get; set; }
