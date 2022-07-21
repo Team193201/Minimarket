@@ -609,19 +609,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sahar\\.nuget\\packages\\": {}
+    "C:\\Users\\Programmer\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\ApiGetWay\\ApiGetWay.csproj",
+      "projectUniqueName": "E:\\githup\\Minimarket\\src\\Minimarket\\ApiGetWay\\ApiGetWay.csproj",
       "projectName": "ApiGetWay",
-      "projectPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\ApiGetWay\\ApiGetWay.csproj",
-      "packagesPath": "C:\\Users\\Sahar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\ApiGetWay\\obj\\",
+      "projectPath": "E:\\githup\\Minimarket\\src\\Minimarket\\ApiGetWay\\ApiGetWay.csproj",
+      "packagesPath": "C:\\Users\\Programmer\\.nuget\\packages\\",
+      "outputPath": "E:\\githup\\Minimarket\\src\\Minimarket\\ApiGetWay\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Sahar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Programmer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -674,7 +674,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

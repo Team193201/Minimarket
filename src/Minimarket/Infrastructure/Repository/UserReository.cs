@@ -1,5 +1,6 @@
 ﻿using Entities.Model;
 using Infrastructure.Interface;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repository
 {
@@ -11,25 +12,24 @@ namespace Infrastructure.Repository
 
         }
 
-        public void AddUser(User model)
+        public async Task<User> GetByIdAsync(Guid id, CancellationToken cancellationToken)
         {
-            AddEntity(model);
+            //    Table.Where(w => w.Id == id).Select(s => new User 
+            //    {
+            //      Id=s.Id,
+            //      Email=s.Email,   
+            //    });
+
+            var user = await Table.Where(f => f.Id == id).FirstOrDefaultAsync(cancellationToken);
+
+            return user;
+        }
+
+        public async Task<IEnumerable<User>> GetUsersByNameAsync(string name, CancellationToken cancellationToken)
+        {
+            var users = await TableNoTracking.Where(w => w.UserName == name).ToListAsync(cancellationToken);
+
+            return users;
         }
     }
-
-    //public class Commandhandler
-    //{
-    //    IUserReository UserReository;
-    //    public Commandhandler(IUserReository userReository)
-    //    {
-    //        UserReository = userReository;
-    //    }
-
-    //    public void Handel(Command command)
-    //    {
-    //        //command
-
-    //        UserReository.AddUser();
-    //    }
-    //}
 }

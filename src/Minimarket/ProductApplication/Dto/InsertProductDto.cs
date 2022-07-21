@@ -1,9 +1,6 @@
-﻿using MediatR;
-using ProductApplication.Dto;
-
-namespace ProductApplication.Command
+﻿namespace ProductApplication.Dto
 {
-    public class InsertProductCommand : IRequest<InsertProductDto>
+    public class InsertProductDto
     {
         public int ProductId { get; set; }
 

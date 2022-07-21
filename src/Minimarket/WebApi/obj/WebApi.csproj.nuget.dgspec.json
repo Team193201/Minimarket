@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\WebApi\\WebApi.csproj": {}
+    "E:\\githup\\Minimarket\\src\\Minimarket\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\ProductApplication\\ProductApplication.csproj": {
+    "E:\\githup\\Minimarket\\src\\Minimarket\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\ProductApplication\\ProductApplication.csproj",
-        "projectName": "ProductApplication",
-        "projectPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\ProductApplication\\ProductApplication.csproj",
-        "packagesPath": "C:\\Users\\Sahar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\ProductApplication\\obj\\",
+        "projectUniqueName": "E:\\githup\\Minimarket\\src\\Minimarket\\Entities\\Entities.csproj",
+        "projectName": "Entities",
+        "projectPath": "E:\\githup\\Minimarket\\src\\Minimarket\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\Programmer\\.nuget\\packages\\",
+        "outputPath": "E:\\githup\\Minimarket\\src\\Minimarket\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Sahar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Programmer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,6 +28,144 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\githup\\Minimarket\\src\\Minimarket\\Infrastructure\\Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\githup\\Minimarket\\src\\Minimarket\\Infrastructure\\Infrastructure.csproj",
+        "projectName": "Infrastructure",
+        "projectPath": "E:\\githup\\Minimarket\\src\\Minimarket\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Programmer\\.nuget\\packages\\",
+        "outputPath": "E:\\githup\\Minimarket\\src\\Minimarket\\Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Programmer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "E:\\githup\\Minimarket\\src\\Minimarket\\Entities\\Entities.csproj": {
+                "projectPath": "E:\\githup\\Minimarket\\src\\Minimarket\\Entities\\Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\githup\\Minimarket\\src\\Minimarket\\ProductApplication\\ProductApplication.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\githup\\Minimarket\\src\\Minimarket\\ProductApplication\\ProductApplication.csproj",
+        "projectName": "ProductApplication",
+        "projectPath": "E:\\githup\\Minimarket\\src\\Minimarket\\ProductApplication\\ProductApplication.csproj",
+        "packagesPath": "C:\\Users\\Programmer\\.nuget\\packages\\",
+        "outputPath": "E:\\githup\\Minimarket\\src\\Minimarket\\ProductApplication\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Programmer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "E:\\githup\\Minimarket\\src\\Minimarket\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "E:\\githup\\Minimarket\\src\\Minimarket\\Infrastructure\\Infrastructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -60,21 +198,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\WebApi\\WebApi.csproj": {
+    "E:\\githup\\Minimarket\\src\\Minimarket\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "E:\\githup\\Minimarket\\src\\Minimarket\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\WebApi\\WebApi.csproj",
-        "packagesPath": "C:\\Users\\Sahar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\WebApi\\obj\\",
+        "projectPath": "E:\\githup\\Minimarket\\src\\Minimarket\\WebApi\\WebApi.csproj",
+        "packagesPath": "C:\\Users\\Programmer\\.nuget\\packages\\",
+        "outputPath": "E:\\githup\\Minimarket\\src\\Minimarket\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Sahar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Programmer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,8 +226,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\ProductApplication\\ProductApplication.csproj": {
-                "projectPath": "C:\\Users\\Sahar\\source\\repos\\Team193201\\Minimarket\\src\\Minimarket\\ProductApplication\\ProductApplication.csproj"
+              "E:\\githup\\Minimarket\\src\\Minimarket\\ProductApplication\\ProductApplication.csproj": {
+                "projectPath": "E:\\githup\\Minimarket\\src\\Minimarket\\ProductApplication\\ProductApplication.csproj"
               }
             }
           }
@@ -127,7 +265,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

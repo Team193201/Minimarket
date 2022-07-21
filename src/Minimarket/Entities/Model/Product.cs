@@ -11,22 +11,28 @@ namespace Entities
     public class Product
     {
         [Display(Name ="کد محصول"),Required]
-        public int ProductID { get; set; }
+        public int ProductId { get; set; }
 
         [Display(Name = "نام محصول"), Required]
         public string ProductName { get; set; }
 
         [Display(Name = "دسته بندی"), Required]
-        public Nullable<int> CategoryID { get; set; }
+        public int CategoryId { get; set; }
 
         [Display(Name = "مقدار در واحد"), Required]
         public string QuantityPerUnit { get; set; }
 
         [Display(Name = "قیمت واحد"), Required]
-        public Nullable<decimal> UnitPrice { get; set; }
+        public decimal? UnitPrice { get; set; }
 
         [Display(Name = "موجودی واحد"), Required]
-        public Nullable<short> UnitsInStock { get; set; }
+        public short? UnitsInStock { get; set; }
+
+        [Display(Name = "تاریخ ایجاد")]
+        public DateTime? CreateDateTime { get; set; }
+
+        [Display(Name = "تاریخ ویرایش")]
+        public DateTime? ModifiDateTime { get; set; }
 
         public Category category { get; set; }  
     }
