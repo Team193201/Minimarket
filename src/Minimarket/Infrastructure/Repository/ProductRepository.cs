@@ -17,7 +17,7 @@ namespace Infrastructure.Repository
 
         }
 
-        public async Task<Product> GetByIdAsync(int id, CancellationToken cancellationToken)
+        public async Task<Product> GetByIdAsync(Guid id, CancellationToken cancellationToken)
         {
             var prodct = await Table.Where(p => p.ProductId == id).FirstOrDefaultAsync(cancellationToken);
             return prodct;
