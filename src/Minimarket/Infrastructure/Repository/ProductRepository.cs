@@ -1,5 +1,6 @@
 ﻿using Entities;
 using Infrastructure.Interface;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,19 @@ namespace Infrastructure.Repository
             : base(appDbContext)
         {
 
+        }
+
+        public async Task<Product> GetByIdAsync(int id, CancellationToken cancellationToken)
+        {
+            var prodct = await Table.Where(p => p.ProductId == id).FirstOrDefaultAsync(cancellationToken);
+            return prodct;
+        }
+
+        public async Task<IEnumerable<Product>> GetProductsByNameAsync(string name, CancellationToken cancellationToken)
+        {
+            var prodcts = await TableNoTracking.Where(p => p.ProductName == name).ToListAsync(cancellationToken);
+
+            return prodcts;
         }
     }
 }

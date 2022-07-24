@@ -10,6 +10,9 @@ namespace Infrastructure.Interface
     {
         ICategoryRepository CategoryRepository { get; set; }
         IUserReository UserReository { get; set; }
+        IProductRepository ProductRepository { get; set; }
+        IRoleRepository RoleRepository { get; set; }
+
 
         Task SaveChangesAsync(CancellationToken cancellationToken);
     }
