@@ -2,7 +2,6 @@
 {
     public class InsertProductDto
     {
-
         public string ProductName { get; set; }
 
         public Guid? CategoryId { get; set; }

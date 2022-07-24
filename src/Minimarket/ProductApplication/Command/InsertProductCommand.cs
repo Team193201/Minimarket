@@ -5,7 +5,6 @@ namespace ProductApplication.Command
 {
     public class InsertProductCommand : IRequest<InsertProductDto>
     {
-
         public string ProductName { get; set; }
 
         public Guid? CategoryId { get; set; }

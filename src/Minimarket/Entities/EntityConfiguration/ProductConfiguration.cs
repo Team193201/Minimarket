@@ -9,6 +9,8 @@ namespace Entities.EntityConfiguration
         public void Configure(EntityTypeBuilder<Product> builder)
         {
             // builder.ToTable("","");
+            builder.HasKey(e => e.ProductId); //make up the primary key
+
             builder.HasOne(c => c.category)
                 .WithMany(p => p.Products)
                 .HasForeignKey(p => p.CategoryId)

@@ -40,7 +40,7 @@ namespace ProductApplication.Command.Handler
             }
             else
             {
-                throw new Exception("category is not found");
+                throw new NullReferenceException("category is not found");
             }
         }
     }

@@ -38,6 +38,7 @@ namespace WebApi.Controllers
                 UnitPrice = insertProductDto.UnitPrice,
                 UnitsInStock = insertProductDto.UnitsInStock,
             });
+
             return Ok(result);
         }
 

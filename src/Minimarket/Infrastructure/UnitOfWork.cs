@@ -3,7 +3,7 @@ using Infrastructure.Repository;
 
 namespace Infrastructure
 {
-    public class UnitOfWork: IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private AppDbContext AppDbContext { get; set; }
 
