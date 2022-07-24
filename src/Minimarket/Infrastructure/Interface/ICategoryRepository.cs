@@ -4,6 +4,6 @@ namespace Infrastructure.Interface
 {
     public interface ICategoryRepository : IRepository<Category>
     {
-        void GetCategoryByDatetime();
+        Task<bool> AnyCategoryIdAsync(Guid? id, CancellationToken cancellationToken);
     }
 }

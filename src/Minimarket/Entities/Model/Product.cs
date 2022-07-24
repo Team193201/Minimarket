@@ -12,13 +12,13 @@ namespace Entities
     public class Product:IEntity
     {
         [Display(Name ="کد محصول"),Required]
-        public Guid ProductId { get; set; }
+        public Guid? ProductId { get; set; }
 
         [Display(Name = "نام محصول"), Required]
         public string ProductName { get; set; }
 
         [Display(Name = "دسته بندی"), Required]
-        public int CategoryId { get; set; }
+        public Guid? CategoryId { get; set; }
 
         [Display(Name = "مقدار در واحد"), Required]
         public string QuantityPerUnit { get; set; }

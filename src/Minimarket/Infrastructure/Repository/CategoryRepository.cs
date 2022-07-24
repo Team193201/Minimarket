@@ -1,5 +1,6 @@
 ﻿using Entities;
 using Infrastructure.Interface;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repository
 {
@@ -12,10 +13,9 @@ namespace Infrastructure.Repository
             _appDbContext = appDbContext;
         }
 
-
-        public void GetCategoryByDatetime()
+        public async Task<bool> AnyCategoryIdAsync(Guid? id, CancellationToken cancellationToken)
         {
-
+            return await TableNoTracking.AnyAsync(c => c.CategoryID == id, cancellationToken);
         }
     }
 }

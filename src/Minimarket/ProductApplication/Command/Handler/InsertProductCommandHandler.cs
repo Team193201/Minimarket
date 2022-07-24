@@ -11,24 +11,37 @@ namespace ProductApplication.Command.Handler
         {
             UnitOfWork = unitOfWork;
         }
-        public Task<InsertProductDto> Handle(InsertProductCommand request, CancellationToken cancellationToken)
+        public async Task<InsertProductDto> Handle(InsertProductCommand request, CancellationToken cancellationToken)
         {
-            // map InsertProductCommand to entity
-            //rep add product 
-
-            // log 
-            //event
-
-            // UnitOfWork.CategoryRepository.AddAsyncEntity(new Entities.Category() { }, cancellationToken);
-
-
-            // add product
-            // add cat
-            //update useer
-
-            //UnitOfWork.SaveChangesAsync(cancellationToken);
-            //save 
-            throw new NotImplementedException();
+            var existCategory = await UnitOfWork.CategoryRepository.AnyCategoryIdAsync(request.CategoryId, cancellationToken);
+            if (existCategory)
+            {
+                UnitOfWork.ProductRepository.AddEntity(new Entities.Product
+                {
+                    CategoryId = request.CategoryId,
+                    CreateDateTime = request.CreateDateTime,
+                    ModifiDateTime = null,
+                    ProductId = Guid.NewGuid(),
+                    ProductName = request.ProductName,
+                    QuantityPerUnit = request.QuantityPerUnit,
+                    UnitPrice = request.UnitPrice,
+                    UnitsInStock = request.UnitsInStock
+                });
+                await UnitOfWork.SaveChangesAsync(cancellationToken);
+                return new InsertProductDto
+                {
+                    CategoryId = request.CategoryId,
+                    CreateDateTime = request.CreateDateTime,
+                    ProductName = request.ProductName,
+                    QuantityPerUnit = request.QuantityPerUnit,
+                    UnitPrice = request.UnitPrice,
+                    UnitsInStock = request.UnitsInStock
+                };
+            }
+            else
+            {
+                throw new Exception("category is not found");
+            }
         }
     }
 }

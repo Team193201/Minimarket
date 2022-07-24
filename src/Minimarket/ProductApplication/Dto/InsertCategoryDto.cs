@@ -2,7 +2,6 @@
 {
     public class InsertCategoryDto
     {
-        public Guid CategoryID { get; set; }
 
         public string CategoryName { get; set; }
 

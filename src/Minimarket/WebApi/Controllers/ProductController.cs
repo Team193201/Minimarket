@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using ProductApplication.Command;
+using ProductApplication.Dto;
 
 namespace WebApi.Controllers
 {
@@ -6,6 +9,11 @@ namespace WebApi.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
+        private IMediator mediator;
+        public ProductController(IMediator _mediator)
+        {
+            mediator = _mediator;
+        }
         [HttpGet("GetProduct")]
         public async Task<IActionResult> Get(Guid id, CancellationToken cancellationToken)
         {
@@ -19,9 +27,18 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("PostProduct")]
-        public async Task<IActionResult> Post(CancellationToken cancellationToken)
+        public async Task<IActionResult> Post(InsertProductDto insertProductDto, CancellationToken cancellationToken)
         {
-            return await Task.FromResult(Ok());
+            var result = await mediator.Send(new InsertProductCommand
+            {
+                CategoryId = insertProductDto.CategoryId,
+                CreateDateTime = DateTime.Now,
+                ProductName = insertProductDto.ProductName,
+                QuantityPerUnit = insertProductDto.QuantityPerUnit,
+                UnitPrice = insertProductDto.UnitPrice,
+                UnitsInStock = insertProductDto.UnitsInStock,
+            });
+            return Ok(result);
         }
 
         [HttpPut("PutProduct")]
