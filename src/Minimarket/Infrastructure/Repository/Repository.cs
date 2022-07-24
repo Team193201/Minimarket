@@ -66,12 +66,5 @@ namespace Infrastructure.Repository
             entity.RemoveRange(models);
         }
         #endregion
-
-
-
-        // rep role
-        // rep product
-
-        // UnitOfWork save role , product
     }
 }

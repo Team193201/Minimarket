@@ -19,6 +19,7 @@ namespace Infrastructure
         {
             base.OnModelCreating(builder);
             var entity = typeof(IEntity).Assembly;
+
             builder.RegisterAllEntities<IEntity>(entity);
             builder.RegisterEntityTypeConfiguration(entity);
         }
