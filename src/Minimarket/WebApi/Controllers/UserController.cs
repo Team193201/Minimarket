@@ -4,34 +4,34 @@ namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoryController : ControllerBase
+    public class UserController : ControllerBase
     {
 
-        [HttpGet("GetCategory")]
+        [HttpGet("GetUser")]
         public async Task<IActionResult> Get(Guid id, CancellationToken cancellationToken)
         {
             return await Task.FromResult(Ok());
         }
 
-        [HttpGet("GetCategorys")]
+        [HttpGet("GetUsers")]
         public async Task<IActionResult> Get(int task, int skip, CancellationToken cancellationToken)
         {
             return await Task.FromResult(Ok());
         }
 
-        [HttpPost("PostCategory")]
+        [HttpPost("PostUser")]
         public async Task<IActionResult> Post(CancellationToken cancellationToken)
         {
             return await Task.FromResult(Ok());
         }
 
-        [HttpPut("PutCategory")]
+        [HttpPut("PutUser")]
         public async Task<IActionResult> Put(Guid id, CancellationToken cancellationToken)
         {
             return await Task.FromResult(Ok());
         }
 
-        [HttpDelete("DeleteCategory")]
+        [HttpDelete("DeleteUser")]
         public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
         {
             return await Task.FromResult(Ok());

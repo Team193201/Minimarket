@@ -7,7 +7,7 @@ namespace WebApi.Controllers
     public class ProductController : ControllerBase
     {
         [HttpGet("GetProduct")]
-        public async Task<IActionResult> Get(int id, CancellationToken cancellationToken)
+        public async Task<IActionResult> Get(Guid id, CancellationToken cancellationToken)
         {
             return await Task.FromResult(Ok());
         }
@@ -25,13 +25,13 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("PutProduct")]
-        public async Task<IActionResult> Put(int id, CancellationToken cancellationToken)
+        public async Task<IActionResult> Put(Guid id, CancellationToken cancellationToken)
         {
             return await Task.FromResult(Ok());
         }
 
         [HttpDelete("DeleteProduct")]
-        public async Task<IActionResult> Delete(int id, CancellationToken cancellationToken)
+        public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
         {
             return await Task.FromResult(Ok());
         }

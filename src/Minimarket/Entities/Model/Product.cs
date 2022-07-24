@@ -12,7 +12,7 @@ namespace Entities
     public class Product:IEntity
     {
         [Display(Name ="کد محصول"),Required]
-        public int ProductId { get; set; }
+        public Guid ProductId { get; set; }
 
         [Display(Name = "نام محصول"), Required]
         public string ProductName { get; set; }
