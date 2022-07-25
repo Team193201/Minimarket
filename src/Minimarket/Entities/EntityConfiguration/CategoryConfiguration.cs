@@ -8,7 +8,7 @@ namespace Entities.EntityConfiguration
 
         public void Configure(EntityTypeBuilder<Category> builder)
         {
-            builder.HasKey(e => e.CategoryID); //make up the primary key
+            builder.HasKey(e => e.CategoryId); //make up the primary key
         }
     }
 }

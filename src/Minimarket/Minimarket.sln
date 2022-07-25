@@ -23,9 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductApplication", "Produ
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{637D09AE-D27F-46C5-97BF-C7CD3DD7D065}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdnetityServer", "IdnetityServer\IdnetityServer.csproj", "{A1776B03-DADE-4464-816E-F5AA1B9BC9A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdnetityServer", "IdnetityServer\IdnetityServer.csproj", "{A1776B03-DADE-4464-816E-F5AA1B9BC9A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerApplication", "IdentityServerApplication\IdentityServerApplication.csproj", "{676C0532-AE09-40AC-8956-383066EE8CC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerApplication", "IdentityServerApplication\IdentityServerApplication.csproj", "{676C0532-AE09-40AC-8956-383066EE8CC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

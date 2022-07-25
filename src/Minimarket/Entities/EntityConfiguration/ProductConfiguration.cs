@@ -11,7 +11,7 @@ namespace Entities.EntityConfiguration
             // builder.ToTable("","");
             builder.HasKey(e => e.ProductId); //make up the primary key
 
-            builder.HasOne(c => c.category)
+            builder.HasOne(c => c.Category)
                 .WithMany(p => p.Products)
                 .HasForeignKey(p => p.CategoryId)
                 .OnDelete(DeleteBehavior.Cascade)

@@ -8,9 +8,9 @@ namespace Entities.EntityConfiguration
     {
         public void Configure(EntityTypeBuilder<UserRole> builder)
         {
-            builder.HasOne(u=>u.User)
-                .WithMany(r=>r.UserRoles)
-                .HasForeignKey(r=>r.UserId)
+            builder.HasOne(u => u.User)
+                .WithMany(r => r.UserRoles)
+                .HasForeignKey(r => r.UserId)
                 .OnDelete(DeleteBehavior.Cascade)
                 .IsRequired();
 
