@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Sherd;
 using Sherd.Command.Product;
 using Sherd.Dto.Product;
 
@@ -39,7 +40,7 @@ namespace WebApi.Controllers
                 UnitsInStock = insertProductDto.UnitsInStock,
             });
 
-            return Ok(result);
+            return Ok(new ApiResult(result));
         }
 
         [HttpPut("PutProduct")]
