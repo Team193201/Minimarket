@@ -20,7 +20,7 @@ namespace ProductApplication.Command.Handler
                 {
                     CategoryId = request.CategoryId,
                     CreateDateTime = request.CreateDateTime,
-                    ModifiDateTime = null,
+                    ModifiDateTime = default(DateTime),
                     ProductId = Guid.NewGuid(),
                     ProductName = request.ProductName,
                     QuantityPerUnit = request.QuantityPerUnit,

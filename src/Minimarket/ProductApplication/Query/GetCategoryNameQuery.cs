@@ -9,6 +9,6 @@ namespace ProductApplication.Query
 {
     public class GetCategoryNameQuery : IRequest<string> 
     {
-        public Guid CategoryID { get; set; }
+        public Guid CategoryId { get; set; }
     }
 }
