@@ -12,6 +12,7 @@ namespace ProductApplication.Command
         {
             UnitOfWork = unitOfWork;
         }
+
         public async Task<InsertProductDto> Handle(InsertProductCommand request, CancellationToken cancellationToken)
         {
             var existCategory = await UnitOfWork.CategoryRepository.AnyCategoryIdAsync(request.CategoryId, cancellationToken);

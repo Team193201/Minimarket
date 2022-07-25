@@ -4,7 +4,6 @@
     {
         public AppDbContextConfig AppDbContextConfig { get; set; }
         public Logging Logging { get; set; }
-
     }
 
     public class AppDbContextConfig

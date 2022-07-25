@@ -1,17 +1,11 @@
 ﻿using Entities.Interface;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Product:IEntity
+    public class Product : IEntity
     {
-        [Display(Name ="کد محصول"),Required]
+        [Display(Name = "کد محصول"), Required]
         public Guid ProductId { get; set; }
 
         [Display(Name = "نام محصول"), Required]
@@ -35,6 +29,6 @@ namespace Entities
         [Display(Name = "تاریخ ویرایش")]
         public DateTime ModifiDateTime { get; set; }
 
-        public Category Category { get; set; }  
+        public Category Category { get; set; }
     }
 }
