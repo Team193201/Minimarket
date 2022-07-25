@@ -1,8 +1,9 @@
 ﻿using Infrastructure.Interface;
 using MediatR;
-using ProductApplication.Dto;
+using Sherd.Command.Product;
+using Sherd.Dto.Product;
 
-namespace ProductApplication.Command.Handler
+namespace ProductApplication.Command
 {
     public class InsertProductCommandHandler : IRequestHandler<InsertProductCommand, InsertProductDto>
     {

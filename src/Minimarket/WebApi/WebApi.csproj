@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProductApplication\ProductApplication.csproj" />
+    <ProjectReference Include="..\Sherd\Sherd.csproj" />
   </ItemGroup>
 
 </Project>

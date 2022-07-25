@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ProductApplication.Command;
-using ProductApplication.Dto;
+using Sherd.Command.Product;
+using Sherd.Dto.Product;
 
 namespace WebApi.Controllers
 {

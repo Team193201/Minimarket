@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using ProductApplication.Dto;
+using Sherd.Dto.Category;
 
-namespace ProductApplication.Command
+namespace Sherd.Command.Category
 {
     public class InsertCategoryCommand : IRequest<InsertCategoryDto>
     {
