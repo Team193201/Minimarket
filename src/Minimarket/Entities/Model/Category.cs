@@ -6,7 +6,7 @@ namespace Entities
     public class Category : IEntity
     {
         [Display(Name = "شناسه دسته"), Required]
-        public Guid CategoryID { get; set; }
+        public Guid CategoryId { get; set; }
 
         [Display(Name = "نام دسته"), Required]
         public string CategoryName { get; set; }

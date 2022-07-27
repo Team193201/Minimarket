@@ -1,8 +1,9 @@
 ﻿using Infrastructure.Interface;
 using MediatR;
-using ProductApplication.Dto;
+using Sherd.Command.Product;
+using Sherd.Dto.Product;
 
-namespace ProductApplication.Command.Handler
+namespace ProductApplication.Command
 {
     public class InsertProductCommandHandler : IRequestHandler<InsertProductCommand, InsertProductDto>
     {
@@ -11,6 +12,7 @@ namespace ProductApplication.Command.Handler
         {
             UnitOfWork = unitOfWork;
         }
+
         public async Task<InsertProductDto> Handle(InsertProductCommand request, CancellationToken cancellationToken)
         {
             var existCategory = await UnitOfWork.CategoryRepository.AnyCategoryIdAsync(request.CategoryId, cancellationToken);
@@ -20,7 +22,7 @@ namespace ProductApplication.Command.Handler
                 {
                     CategoryId = request.CategoryId,
                     CreateDateTime = request.CreateDateTime,
-                    ModifiDateTime = null,
+                    ModifiDateTime = default(DateTime),
                     ProductId = Guid.NewGuid(),
                     ProductName = request.ProductName,
                     QuantityPerUnit = request.QuantityPerUnit,
@@ -40,7 +42,7 @@ namespace ProductApplication.Command.Handler
             }
             else
             {
-                throw new Exception("category is not found");
+                throw new NullReferenceException("category is not found");
             }
         }
     }

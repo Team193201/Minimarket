@@ -15,7 +15,7 @@ namespace Infrastructure.Repository
 
         public async Task<bool> AnyCategoryIdAsync(Guid? id, CancellationToken cancellationToken)
         {
-            return await TableNoTracking.AnyAsync(c => c.CategoryID == id, cancellationToken);
+            return await TableNoTracking.AnyAsync(c => c.CategoryId == id, cancellationToken);
         }
     }
 }
