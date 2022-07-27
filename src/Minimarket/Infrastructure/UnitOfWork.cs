@@ -17,9 +17,7 @@ namespace Infrastructure
         {
             AppDbContext = appDbContext;
             CategoryRepository = new CategoryRepository(AppDbContext);
-            UserReository = new UserReository(AppDbContext);
             ProductRepository = new ProductRepository(AppDbContext);
-            RoleRepository = new RoleRepository(AppDbContext);
         }
 
         public async Task SaveChangesAsync(CancellationToken cancellationToken)
