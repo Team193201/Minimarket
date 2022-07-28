@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Sherd;
+using Sherd.Command.Category;
+using Sherd.Dto.Category;
 
 namespace WebApi.Controllers
 {
@@ -6,6 +10,11 @@ namespace WebApi.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
+        IMediator mediator;
+        public CategoryController(IMediator _mediator)
+        {
+            mediator = _mediator;
+        }
 
         [HttpGet("GetCategory")]
         public async Task<IActionResult> Get(Guid id, CancellationToken cancellationToken)
@@ -20,9 +29,15 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("PostCategory")]
-        public async Task<IActionResult> Post(CancellationToken cancellationToken)
+        public async Task<IActionResult> Post(InsertCategoryDto insertCategoryDto, CancellationToken cancellationToken)
         {
-            return await Task.FromResult(Ok());
+            var result = await mediator.Send(new InsertCategoryCommand
+            {
+                CategoryName = insertCategoryDto.CategoryName,
+                Description = insertCategoryDto.Description,
+                Picture = insertCategoryDto.Picture
+            });
+            return Ok(new ApiResult(result));
         }
 
         [HttpPut("PutCategory")]

@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdnetityServer", "IdnetityS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerApplication", "IdentityServerApplication\IdentityServerApplication.csproj", "{676C0532-AE09-40AC-8956-383066EE8CC7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sherd", "Sherd\Sherd.csproj", "{3C5F40F2-9CB8-4506-8F06-DA18828A2588}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sheard", "Sherd\Sheard.csproj", "{3C5F40F2-9CB8-4506-8F06-DA18828A2588}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
