@@ -1,7 +1,7 @@
 ﻿using Infrastructure.Interface;
 using MediatR;
-using Sherd.Command.Product;
-using Sherd.Dto.Product;
+using Sheard.Command.Product;
+using Sheard.Dto.Product;
 
 namespace ProductApplication.Command
 {

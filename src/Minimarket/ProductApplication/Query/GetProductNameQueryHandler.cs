@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using Sherd.Query.Product;
+using Sheard.Query.Product;
 
 namespace ProductApplication.Query.Handler
 {

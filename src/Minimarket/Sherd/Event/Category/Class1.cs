@@ -1,4 +1,4 @@
-﻿namespace Sherd.Event.Category
+﻿namespace Sheard.Event.Category
 {
     internal class Class1
     {

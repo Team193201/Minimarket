@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using Sherd.Dto.Product;
+using Sheard.Dto.Product;
 
-namespace Sherd.Command.Product
+namespace Sheard.Command.Product
 {
     public class InsertProductCommand : IRequest<InsertProductDto>
     {

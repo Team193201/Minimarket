@@ -32,12 +32,12 @@ namespace Infrastructure.Repository
             entity.AddRange(models);
         }
 
-        public async Task AddAsyncEntity(T model, CancellationToken cancellationToken)
+        public async Task AddEntityAsync(T model, CancellationToken cancellationToken)
         {
             await entity.AddAsync(model, cancellationToken);
         }
 
-        public async Task AddRangeAsyncEntities(IEnumerable<T> models, CancellationToken cancellationToken)
+        public async Task AddRangeEntitiesAsync(IEnumerable<T> models, CancellationToken cancellationToken)
         {
             await entity.AddRangeAsync(models, cancellationToken);
         }

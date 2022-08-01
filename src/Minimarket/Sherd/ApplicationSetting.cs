@@ -1,4 +1,4 @@
-﻿namespace Sherd
+﻿namespace Shaerd
 {
     public class ApplicationSetting
     {

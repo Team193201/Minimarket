@@ -1,4 +1,4 @@
-﻿namespace Sherd.Dto.Category
+﻿namespace Sheard.Dto.Category
 {
     public class InsertCategoryDto
     {

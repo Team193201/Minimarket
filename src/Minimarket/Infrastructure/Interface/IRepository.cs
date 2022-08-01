@@ -7,8 +7,8 @@ namespace Infrastructure.Interface
     {
         void AddEntity(T model);
         void AddRangeEntities(IEnumerable<T> models);
-        Task AddAsyncEntity(T model, CancellationToken cancellationToken);
-        Task AddRangeAsyncEntities(IEnumerable<T> models, CancellationToken cancellationToken);
+        Task AddEntityAsync(T model, CancellationToken cancellationToken);
+        Task AddRangeEntitiesAsync(IEnumerable<T> models, CancellationToken cancellationToken);
 
         void UpdateEntity(T model);
         void UpdateRangeEntities(IEnumerable<T> models);

@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Sherd.Query.Category
+namespace Sheard.Query.Category
 {
     public class GetCategoryNameQuery : IRequest<string>
     {

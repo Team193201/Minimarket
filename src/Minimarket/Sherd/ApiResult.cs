@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace Sherd
+namespace Sheard
 {
     public class ApiResult
     {

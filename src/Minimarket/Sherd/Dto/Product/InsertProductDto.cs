@@ -1,4 +1,4 @@
-﻿namespace Sherd.Dto.Product
+﻿namespace Sheard.Dto.Product
 {
     public class InsertProductDto
     {

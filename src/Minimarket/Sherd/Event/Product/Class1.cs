@@ -1,4 +1,4 @@
-﻿namespace Sherd.Event.Product
+﻿namespace Sheard.Event.Product
 {
     internal class Class1
     {

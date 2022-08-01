@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Sherd;
-using Sherd.Command.Category;
-using Sherd.Dto.Category;
+using Sheard;
+using Sheard.Command.Category;
+using Sheard.Dto.Category;
 
 namespace WebApi.Controllers
 {

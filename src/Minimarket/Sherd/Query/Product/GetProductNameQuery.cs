@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Sherd.Query.Product
+namespace Sheard.Query.Product
 {
     public class GetProductNameQuery : IRequest<string>
     {
