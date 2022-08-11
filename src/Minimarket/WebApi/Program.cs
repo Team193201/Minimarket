@@ -1,5 +1,21 @@
+
+using Shaerd;
+
+
+
+
+
+var applicationSetting = new ApplicationSetting();
+
 var builder = WebApplication.CreateBuilder(args);
 
+applicationSetting = builder.Configuration.GetSection(nameof(ApplicationSetting)).Get<ApplicationSetting>();
+
+new ConfigurationBuilder()
+   .SetBasePath(builder.Environment.ContentRootPath)
+   .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+   .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
+   .AddEnvironmentVariables().Build();
 
 //--------------------------- Services --------------------------------
 // Add services to the container.

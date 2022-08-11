@@ -20,8 +20,7 @@ namespace Infrastructure.Repository
 
         public async Task<bool> AnyCategoryNameAsync(string name, CancellationToken cancellationToken)
         {
-            var category = await Table.Where(c => c.CategoryName == name).AnyAsync(cancellationToken);
-            return category;
+            return await TableNoTracking.AnyAsync(c => c.CategoryName == name, cancellationToken);
         }
     }
 }

@@ -16,34 +16,30 @@ namespace ProductApplication.Command
         public async Task<InsertProductDto> Handle(InsertProductCommand request, CancellationToken cancellationToken)
         {
             var existCategory = await UnitOfWork.CategoryRepository.AnyCategoryIdAsync(request.CategoryId, cancellationToken);
-            if (existCategory)
+
+            ArgumentNullException.ThrowIfNull(!existCategory ? null : existCategory, $"{nameof(request.CategoryId)} is not valid");
+
+            UnitOfWork.ProductRepository.AddEntity(new Entities.Product
             {
-                UnitOfWork.ProductRepository.AddEntity(new Entities.Product
-                {
-                    CategoryId = request.CategoryId,
-                    CreateDateTime = request.CreateDateTime,
-                    ModifiDateTime = default(DateTime),
-                    ProductId = Guid.NewGuid(),
-                    ProductName = request.ProductName,
-                    QuantityPerUnit = request.QuantityPerUnit,
-                    UnitPrice = request.UnitPrice,
-                    UnitsInStock = request.UnitsInStock
-                });
-                await UnitOfWork.SaveChangesAsync(cancellationToken);
-                return new InsertProductDto
-                {
-                    CategoryId = request.CategoryId,
-                    CreateDateTime = request.CreateDateTime,
-                    ProductName = request.ProductName,
-                    QuantityPerUnit = request.QuantityPerUnit,
-                    UnitPrice = request.UnitPrice,
-                    UnitsInStock = request.UnitsInStock
-                };
-            }
-            else
+                CategoryId = request.CategoryId,
+                CreateDateTime = request.CreateDateTime,
+                ModifiDateTime = default(DateTime),
+                ProductId = Guid.NewGuid(),
+                ProductName = request.ProductName,
+                QuantityPerUnit = request.QuantityPerUnit,
+                UnitPrice = request.UnitPrice,
+                UnitsInStock = request.UnitsInStock
+            });
+            await UnitOfWork.SaveChangesAsync(cancellationToken);
+            return new InsertProductDto
             {
-                throw new NullReferenceException("category is not found");
-            }
+                CategoryId = request.CategoryId,
+                CreateDateTime = request.CreateDateTime,
+                ProductName = request.ProductName,
+                QuantityPerUnit = request.QuantityPerUnit,
+                UnitPrice = request.UnitPrice,
+                UnitsInStock = request.UnitsInStock
+            };
         }
     }
 }

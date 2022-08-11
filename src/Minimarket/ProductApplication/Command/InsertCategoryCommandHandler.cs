@@ -16,27 +16,23 @@ namespace ProductApplication.Command
         public async Task<InsertCategoryDto> Handle(InsertCategoryCommand request, CancellationToken cancellationToken)
         {
             var existCategory = await UnitOfWork.CategoryRepository.AnyCategoryNameAsync(request.CategoryName, cancellationToken);
-            if (!existCategory)
+            if (existCategory)
+                throw new ArgumentNullException($"{request.CategoryName} is exist");
+
+            UnitOfWork.CategoryRepository.AddEntity(new Entities.Category
             {
-                UnitOfWork.CategoryRepository.AddEntity(new Entities.Category
-                {
-                    CategoryId = Guid.NewGuid(),
-                    CategoryName = request.CategoryName,
-                    Picture = request.Picture,
-                    Description = request.Description
-                });
-                await UnitOfWork.SaveChangesAsync(cancellationToken);
-                return new InsertCategoryDto
-                {
-                    CategoryName = request.CategoryName,
-                    Description = request.Description,
-                    Picture = request.Picture,
-                };
-            }
-            else
+                CategoryId = Guid.NewGuid(),
+                CategoryName = request.CategoryName,
+                Picture = request.Picture,
+                Description = request.Description
+            });
+            await UnitOfWork.SaveChangesAsync(cancellationToken);
+            return new InsertCategoryDto
             {
-                throw new NullReferenceException("category is exist");
-            }
+                CategoryName = request.CategoryName,
+                Description = request.Description,
+                Picture = request.Picture,
+            };
         }
     }
 }

@@ -14,15 +14,12 @@ namespace Infrastructure.Repository
 
         public async Task<Product> GetByIdAsync(Guid id, CancellationToken cancellationToken)
         {
-            var prodct = await Table.Where(p => p.ProductId == id).FirstOrDefaultAsync(cancellationToken);
-            return prodct;
+            return await Table.FirstOrDefaultAsync(p => p.ProductId == id, cancellationToken);
         }
 
         public async Task<IEnumerable<Product>> GetProductsByNameAsync(string name, CancellationToken cancellationToken)
         {
-            var prodcts = await TableNoTracking.Where(p => p.ProductName == name).ToListAsync(cancellationToken);
-
-            return prodcts;
+            return await TableNoTracking.Where(p => p.ProductName == name).ToListAsync(cancellationToken);
         }
     }
 }
