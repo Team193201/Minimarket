@@ -9,5 +9,6 @@
 
 
         Task SaveChangesAsync(CancellationToken cancellationToken);
+        void SaveChanges();
     }
 }
