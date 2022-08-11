@@ -1,14 +1,24 @@
-﻿using MediatR;
+﻿using Infrastructure.Interface;
+using MediatR;
 using Sheard.Query.Product;
 
 namespace ProductApplication.Query.Handler
 {
     public class GetProductsByNameQueryHandler : IRequestHandler<GetProductsByNameQuery, List<string>>
     {
-        public Task<List<string>> Handle(GetProductsByNameQuery request, CancellationToken cancellationToken)
+        private readonly IUnitOfWork UnitOfWork;
+        public GetProductsByNameQueryHandler(IUnitOfWork unitOfWork)
         {
-            // id = > name product from req
-            throw new NotImplementedException();
+            UnitOfWork = unitOfWork;
+        }
+
+        public async Task<List<string>> Handle(GetProductsByNameQuery request, CancellationToken cancellationToken)
+        {
+            ArgumentNullException.ThrowIfNull(request.ProductName);
+
+            await UnitOfWork.ProductRepository.GetProductsByNameAsync(request.ProductName, cancellationToken);
+
+            return new List<string>();
         }
     }
 }
