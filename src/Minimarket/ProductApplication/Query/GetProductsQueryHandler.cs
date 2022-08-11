@@ -3,9 +3,9 @@ using Sheard.Query.Product;
 
 namespace ProductApplication.Query.Handler
 {
-    public class GetProductNameQueryHandler : IRequestHandler<GetProductNameQuery, string>
+    public class GetProductsQueryHandler : IRequestHandler<GetProductsQuery, List<string>>
     {
-        public Task<string> Handle(GetProductNameQuery request, CancellationToken cancellationToken)
+        public Task<List<string>> Handle(GetProductsQuery request, CancellationToken cancellationToken)
         {
             // id = > name product from req
             throw new NotImplementedException();

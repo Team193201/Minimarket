@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Sheard;
 using Sheard.Command.Category;
 using Sheard.Dto.Category;
-using Sherd;
+
 
 namespace WebApi.Controllers
 {

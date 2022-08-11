@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Sheard;
 using Sheard.Command.Product;
 using Sheard.Dto.Product;
+using Sheard.Query.Product;
 
 namespace WebApi.Controllers
 {
@@ -18,13 +19,22 @@ namespace WebApi.Controllers
         [HttpGet("GetProduct")]
         public async Task<IActionResult> Get(Guid id, CancellationToken cancellationToken)
         {
-            return await Task.FromResult(Ok());
+            var result = await mediator.Send(new GetProductByIdQuery { ProductId = id }, cancellationToken);
+            return Ok(new ApiResult(result));
         }
 
         [HttpGet("GetProducts")]
-        public async Task<IActionResult> Get(int task, int skip, CancellationToken cancellationToken)
+        public async Task<IActionResult> Get(int take, int skip, CancellationToken cancellationToken)
         {
-            return await Task.FromResult(Ok());
+            var result = await mediator.Send(new GetProductsQuery { Take = take, Skip = skip }, cancellationToken);
+            return Ok(new ApiResult(result));
+        }
+
+        [HttpGet("GetProducts")]
+        public async Task<IActionResult> Get(string name, CancellationToken cancellationToken)
+        {
+            var result = await mediator.Send(new GetProductsByNameQuery { ProductName = name }, cancellationToken);
+            return Ok(new ApiResult(result));
         }
 
         [HttpPost("PostProduct")]
@@ -33,7 +43,7 @@ namespace WebApi.Controllers
             var result = await mediator.Send(new InsertProductCommand
             {
                 CategoryId = insertProductDto.CategoryId,
-                CreateDateTime = DateTime.Now,
+                CreateDateTime = DateTime.UtcNow,
                 ProductName = insertProductDto.ProductName,
                 QuantityPerUnit = insertProductDto.QuantityPerUnit,
                 UnitPrice = insertProductDto.UnitPrice,
