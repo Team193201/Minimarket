@@ -12,14 +12,24 @@ namespace Infrastructure.Repository
 
         }
 
-        public async Task<Product> GetProductByIdAsync(Guid id, CancellationToken cancellationToken)
+        public async Task<Product> GetProductAsync(Guid categoryId, Guid productId, CancellationToken cancellationToken)
         {
-            return await TableNoTracking.FirstOrDefaultAsync(p => p.ProductId == id, cancellationToken);
+            return await TableNoTracking.FirstOrDefaultAsync(p => p.CategoryId == categoryId && p.ProductId == productId, cancellationToken);
+        }
+
+        public async Task<Product> GetProductAsync(Guid categoryId, string productName, CancellationToken cancellationToken)
+        {
+            return await TableNoTracking.FirstOrDefaultAsync(p => p.CategoryId == categoryId && p.ProductName == productName, cancellationToken);
+        }
+
+        public async Task<Product> GetProductAsync(Guid productId, CancellationToken cancellationToken)
+        {
+            return await TableNoTracking.FirstOrDefaultAsync(p => p.ProductId == productId, cancellationToken);
         }
 
         public async Task<IEnumerable<Product>> GetProductsByNameAsync(string name, CancellationToken cancellationToken)
         {
-            return await TableNoTracking.Where(p => p.ProductName == name).ToListAsync(cancellationToken);
+            return await TableNoTracking.Where(p => p.ProductName.Contains(name)).ToListAsync(cancellationToken);
         }
 
         public async Task<IEnumerable<Product>> GetProductsAsync(int take, int skip, CancellationToken cancellationToken)
