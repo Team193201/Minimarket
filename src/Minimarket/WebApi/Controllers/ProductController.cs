@@ -54,9 +54,19 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("PutProduct")]
-        public async Task<IActionResult> Put(Guid id, CancellationToken cancellationToken)
+        public async Task<IActionResult> Put(UpdateProductDto productDto, CancellationToken cancellationToken)
         {
-            return await Task.FromResult(Ok());
+            var result = await mediator.Send(new UpdateProductCommand
+            {
+                CategoryId = productDto.CategoryId,
+                ProductName = productDto.ProductName,
+                QuantityPerUnit = productDto.QuantityPerUnit,
+                UnitPrice = productDto.UnitPrice,
+                UnitsInStock = productDto.UnitsInStock,
+                ProductId = productDto.ProductId
+            });
+
+            return Ok(new ApiResult(result));
         }
 
         [HttpDelete("DeleteProduct")]
