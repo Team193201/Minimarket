@@ -15,7 +15,7 @@ namespace ProductApplication.Query.Handler
         {
             ArgumentNullException.ThrowIfNull(request.ProductId);
 
-            await UnitOfWork.ProductRepository.GetProductByIdAsync(request.ProductId, cancellationToken);
+            await UnitOfWork.ProductRepository.GetProductAsync(request.ProductId, cancellationToken);
             return string.Empty;
         }
     }
