@@ -16,28 +16,21 @@ namespace WebApi.Controllers
         {
             mediator = _mediator;
         }
-        [HttpGet("GetProduct")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get(Guid id, CancellationToken cancellationToken)
         {
             var result = await mediator.Send(new GetProductByIdQuery { ProductId = id }, cancellationToken);
             return Ok(new ApiResult(result));
         }
 
-        [HttpGet("GetProducts")]
+        [HttpGet("")]
         public async Task<IActionResult> Get(int take, int skip, CancellationToken cancellationToken)
         {
             var result = await mediator.Send(new GetProductsQuery { Take = take, Skip = skip }, cancellationToken);
             return Ok(new ApiResult(result));
         }
 
-        [HttpGet("GetProducts")]
-        public async Task<IActionResult> Get(string name, CancellationToken cancellationToken)
-        {
-            var result = await mediator.Send(new GetProductsByNameQuery { ProductName = name }, cancellationToken);
-            return Ok(new ApiResult(result));
-        }
-
-        [HttpPost("PostProduct")]
+        [HttpPost("")]
         public async Task<IActionResult> Post(InsertProductDto insertProductDto, CancellationToken cancellationToken)
         {
             var result = await mediator.Send(new InsertProductCommand
@@ -53,7 +46,7 @@ namespace WebApi.Controllers
             return Ok(new ApiResult(result));
         }
 
-        [HttpPut("PutProduct")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Put(UpdateProductDto productDto, CancellationToken cancellationToken)
         {
             var result = await mediator.Send(new UpdateProductCommand
@@ -69,7 +62,7 @@ namespace WebApi.Controllers
             return Ok(new ApiResult(result));
         }
 
-        [HttpDelete("DeleteProduct")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(DeleteProductDto productDto, CancellationToken cancellationToken)
         {
             var result = await mediator.Send(new DeleteProductCommand
