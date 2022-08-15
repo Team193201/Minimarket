@@ -70,9 +70,14 @@ namespace WebApi.Controllers
         }
 
         [HttpDelete("DeleteProduct")]
-        public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
+        public async Task<IActionResult> Delete(DeleteProductDto productDto, CancellationToken cancellationToken)
         {
-            return await Task.FromResult(Ok());
+            var result = await mediator.Send(new DeleteProductCommand
+            {
+                ProductId = productDto.ProductId
+            });
+
+            return Ok(new ApiResult(result));
         }
     }
 }
