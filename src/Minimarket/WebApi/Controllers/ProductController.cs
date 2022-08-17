@@ -11,11 +11,12 @@ namespace WebApi.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private IMediator mediator;
+        private readonly IMediator mediator;
         public ProductController(IMediator _mediator)
         {
             mediator = _mediator;
         }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(Guid id, CancellationToken cancellationToken)
         {

@@ -11,7 +11,7 @@ namespace WebApi.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        IMediator mediator;
+       private readonly IMediator mediator;
         public CategoryController(IMediator _mediator)
         {
             mediator = _mediator;
