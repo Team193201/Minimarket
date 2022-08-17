@@ -7,7 +7,7 @@ using Sheard.Query.Product;
 
 namespace WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/product")]
     [ApiController]
     public class ProductController : ControllerBase
     {
@@ -47,7 +47,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(UpdateProductDto productDto, CancellationToken cancellationToken)
+        public async Task<IActionResult> Put(Guid id,UpdateProductDto productDto, CancellationToken cancellationToken)
         {
             var result = await mediator.Send(new UpdateProductCommand
             {
@@ -56,18 +56,18 @@ namespace WebApi.Controllers
                 QuantityPerUnit = productDto.QuantityPerUnit,
                 UnitPrice = productDto.UnitPrice,
                 UnitsInStock = productDto.UnitsInStock,
-                ProductId = productDto.ProductId
+                ProductId = id
             });
 
             return Ok(new ApiResult(result));
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(DeleteProductDto productDto, CancellationToken cancellationToken)
+        public async Task<IActionResult> Delete(Guid id,DeleteProductDto productDto, CancellationToken cancellationToken)
         {
             var result = await mediator.Send(new DeleteProductCommand
             {
-                ProductId = productDto.ProductId
+                ProductId = id
             });
 
             return Ok(new ApiResult(result));

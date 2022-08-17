@@ -7,7 +7,7 @@ using Sheard.Dto.Category;
 
 namespace WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/category")]
     [ApiController]
     public class CategoryController : ControllerBase
     {
@@ -17,19 +17,19 @@ namespace WebApi.Controllers
             mediator = _mediator;
         }
 
-        [HttpGet("GetCategory")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get(Guid id, CancellationToken cancellationToken)
         {
             return await Task.FromResult(Ok());
         }
 
-        [HttpGet("GetCategorys")]
+        [HttpGet("")]
         public async Task<IActionResult> Get(int task, int skip, CancellationToken cancellationToken)
         {
             return await Task.FromResult(Ok());
         }
 
-        [HttpPost("PostCategory")]
+        [HttpPost("")]
         public async Task<IActionResult> Post(InsertCategoryDto insertCategoryDto, CancellationToken cancellationToken)
         {
             var result = await mediator.Send(new InsertCategoryCommand
@@ -41,13 +41,13 @@ namespace WebApi.Controllers
             return Ok(new ApiResult(result));
         }
 
-        [HttpPut("PutCategory")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Put(Guid id, CancellationToken cancellationToken)
         {
             return await Task.FromResult(Ok());
         }
 
-        [HttpDelete("DeleteCategory")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
         {
             return await Task.FromResult(Ok());
