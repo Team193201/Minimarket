@@ -1,8 +1,10 @@
 ﻿using Entities.Interface;
 using Entities.Model;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Infrastructure
 {
@@ -25,5 +27,6 @@ namespace Infrastructure
             builder.RegisterAllEntities<IEntity>(entity);
             builder.RegisterEntityTypeConfiguration(entity);
         }
+
     }
 }

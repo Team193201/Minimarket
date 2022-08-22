@@ -18,4 +18,8 @@
     <ProjectReference Include="..\ProductApplication\ProductApplication.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Infrastructure\" />
+  </ItemGroup>
+
 </Project>

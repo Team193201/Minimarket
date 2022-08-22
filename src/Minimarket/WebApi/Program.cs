@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Shaerd;
 using MediatR;
 using System.Reflection;
+using Infrastructure.Extensions;
 
 var applicationSetting = new ApplicationSetting();
 
@@ -26,6 +27,7 @@ new ConfigurationBuilder()
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(applicationSetting.AppDbContextConfig.ConnectionString);
+    
 });
 
 builder.Services.AddIdentity<User, Role>()
@@ -39,7 +41,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-
+app.IntializeDatabase();
 //--------------------------- Configure --------------------------------
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
