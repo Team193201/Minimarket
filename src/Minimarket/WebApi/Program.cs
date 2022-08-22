@@ -1,12 +1,7 @@
-
-using Entities.Model;
-using Infrastructure;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Shaerd;
-using MediatR;
-using System.Reflection;
 using Infrastructure.Extensions;
+using MediatR;
+using Shaerd;
+using System.Reflection;
 
 var applicationSetting = new ApplicationSetting();
 
@@ -24,15 +19,10 @@ new ConfigurationBuilder()
 // Add services to the container.
 
 //TODO order Program.cs
-builder.Services.AddDbContext<AppDbContext>(options =>
-{
-    options.UseSqlServer(applicationSetting.AppDbContextConfig.ConnectionString);
-    
-});
+builder.Services.AddAppDbContext(applicationSetting.AppDbContextConfig.ConnectionString);
+builder.Services.AddRepository();
+builder.Services.AddAppIdentity();
 
-builder.Services.AddIdentity<User, Role>()
-          .AddEntityFrameworkStores<AppDbContext>()
-          .AddDefaultTokenProviders();
 
 builder.Services.AddMediatR(Assembly.GetEntryAssembly());
 builder.Services.AddControllers();
