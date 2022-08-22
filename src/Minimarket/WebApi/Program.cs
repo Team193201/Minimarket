@@ -1,9 +1,11 @@
 
+using Entities.Model;
+using Infrastructure;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Shaerd;
-
-
-
-
+using MediatR;
+using System.Reflection;
 
 var applicationSetting = new ApplicationSetting();
 
@@ -20,8 +22,18 @@ new ConfigurationBuilder()
 //--------------------------- Services --------------------------------
 // Add services to the container.
 
+//TODO order Program.cs
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+    options.UseSqlServer(applicationSetting.AppDbContextConfig.ConnectionString);
+});
+
+builder.Services.AddIdentity<User, Role>()
+          .AddEntityFrameworkStores<AppDbContext>()
+          .AddDefaultTokenProviders();
+
+builder.Services.AddMediatR(Assembly.GetEntryAssembly());
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
