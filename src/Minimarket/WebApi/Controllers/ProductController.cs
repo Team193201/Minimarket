@@ -48,7 +48,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(Guid id,UpdateProductDto productDto, CancellationToken cancellationToken)
+        public async Task<IActionResult> Put(Guid id, UpdateProductDto productDto, CancellationToken cancellationToken)
         {
             var result = await mediator.Send(new UpdateProductCommand
             {
@@ -64,7 +64,7 @@ namespace WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id,DeleteProductDto productDto, CancellationToken cancellationToken)
+        public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
         {
             var result = await mediator.Send(new DeleteProductCommand
             {
