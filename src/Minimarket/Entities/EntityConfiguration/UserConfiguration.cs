@@ -8,6 +8,7 @@ namespace Entities.EntityConfiguration
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
+            builder.ToTable("Users");
             builder.HasKey(e => e.Id); //make up the primary key
 
             builder.Property(m => m.PhoneNumber).IsRequired(true).HasMaxLength(11);
