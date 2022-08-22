@@ -31,9 +31,10 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.IntializeDatabase();
+
 //--------------------------- Configure --------------------------------
 // Configure the HTTP request pipeline.
+app.IntializeDatabase();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
