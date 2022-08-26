@@ -20,14 +20,14 @@ namespace WebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(Guid id, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new GetCategoryByIdQuery { CategoryId = id }, cancellationToken);
+            var result = await mediator.Send(new GetCategoryByIdQuery(id), cancellationToken);
             return Ok(new ApiResult(result));
         }
 
         [HttpGet("")]
         public async Task<IActionResult> Get(int take, int skip, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new GetCategorysQuery { Take = take, Skip = skip }, cancellationToken);
+            var result = await mediator.Send(new GetCategorysQuery(take, skip), cancellationToken);
             return Ok(new ApiResult(result));
         }
 
@@ -35,31 +35,30 @@ namespace WebApi.Controllers
         public async Task<IActionResult> Post(InsertCategoryDto insertCategoryDto, CancellationToken cancellationToken)
         {
             var result = await mediator.Send(new InsertCategoryCommand
-            {
-                CategoryName = insertCategoryDto.CategoryName,
-                Description = insertCategoryDto.Description,
-                Picture = insertCategoryDto.Picture
-            });
+            (
+                 insertCategoryDto.CategoryName,
+                 insertCategoryDto.Description,
+                 insertCategoryDto.Picture
+            ), cancellationToken);
             return Ok(new ApiResult(result));
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(Guid id, UpdateCategoryDto updateCategoryDto, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new UpdateCategoryCommand
-            {
-                CategoryId = id,
-                CategoryName = updateCategoryDto.CategoryName,
-                Description = updateCategoryDto.Description,
-                Picture = updateCategoryDto.Picture
-            }, cancellationToken);
+            var result = await mediator.Send(new UpdateCategoryCommand(
+                id,
+                updateCategoryDto.CategoryName,
+                updateCategoryDto.Description,
+                updateCategoryDto.Picture
+            ), cancellationToken);
             return Ok(new ApiResult(result));
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new DeleteCategoryCommand { CategoryId = id }, cancellationToken);
+            var result = await mediator.Send(new DeleteCategoryCommand(id), cancellationToken);
             return Ok(new ApiResult(result));
         }
     }

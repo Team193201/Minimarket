@@ -20,14 +20,14 @@ namespace WebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(Guid id, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new GetProductByIdQuery ( id ), cancellationToken);
+            var result = await mediator.Send(new GetProductByIdQuery(id), cancellationToken);
             return Ok(new ApiResult(result));
         }
 
         [HttpGet("")]
         public async Task<IActionResult> Get(int take, int skip, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new GetProductsQuery ( take,  skip ), cancellationToken);
+            var result = await mediator.Send(new GetProductsQuery(take, skip), cancellationToken);
             return Ok(new ApiResult(result));
         }
 

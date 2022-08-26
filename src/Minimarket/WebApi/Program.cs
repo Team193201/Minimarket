@@ -18,7 +18,6 @@ new ConfigurationBuilder()
 //--------------------------- Services --------------------------------
 // Add services to the container.
 
-//TODO order Program.cs
 builder.Services.AddAppDbContext(applicationSetting.AppDbContextConfig.ConnectionString);
 builder.Services.AddRepository();
 builder.Services.AddAppIdentity();
