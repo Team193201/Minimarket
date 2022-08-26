@@ -2,6 +2,7 @@
 using Infrastructure.Interface;
 using MediatR;
 using Sheard.Command.Product;
+using Infrastructure.Extensions;
 
 namespace ProductApplication.Command
 {
