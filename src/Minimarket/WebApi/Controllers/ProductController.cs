@@ -20,14 +20,14 @@ namespace WebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(Guid id, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new GetProductByIdQuery { ProductId = id }, cancellationToken);
+            var result = await mediator.Send(new GetProductByIdQuery ( id ), cancellationToken);
             return Ok(new ApiResult(result));
         }
 
         [HttpGet("")]
         public async Task<IActionResult> Get(int take, int skip, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new GetProductsQuery { Take = take, Skip = skip }, cancellationToken);
+            var result = await mediator.Send(new GetProductsQuery ( take,  skip ), cancellationToken);
             return Ok(new ApiResult(result));
         }
 
@@ -66,11 +66,7 @@ namespace WebApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new DeleteProductCommand
-            {
-                ProductId = id
-            });
-
+            var result = await mediator.Send(new DeleteProductCommand(id));
             return Ok(new ApiResult(result));
         }
     }

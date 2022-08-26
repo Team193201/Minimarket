@@ -2,8 +2,5 @@
 
 namespace Sheard.Query.Product
 {
-    public class GetProductsByNameQuery : IRequest<List<string>>
-    {
-        public string ProductName { get; set; }
-    }
+    public record GetProductsByNameQuery(string ProductName) : IRequest<List<string>>;
 }

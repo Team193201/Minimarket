@@ -2,9 +2,5 @@
 
 namespace Sheard.Query.Product
 {
-    public class GetProductsQuery : IRequest<List<string>>
-    {
-        public int Take { get; set; }
-        public int Skip { get; set; }
-    }
+    public record GetProductsQuery(int Take, int Skip) : IRequest<List<string>>;
 }

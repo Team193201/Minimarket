@@ -2,7 +2,7 @@
 
 namespace Sheard.Command.Product
 {
-    public class UpdateProductCommand : IRequest<string>
+    public record UpdateProductCommand : IRequest<string>
     {
         public Guid ProductId { get; set; }
         public string ProductName { get; set; }

@@ -1,9 +1,8 @@
 ﻿using MediatR;
-using Sheard.Dto.Product;
 
 namespace Sheard.Command.Product
 {
-    public class InsertProductCommand : IRequest<object>
+    public record InsertProductCommand : IRequest<object>
     {
         public string ProductName { get; set; }
 
