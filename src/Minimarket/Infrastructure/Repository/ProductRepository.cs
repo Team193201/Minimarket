@@ -12,17 +12,29 @@ namespace Infrastructure.Repository
 
         }
 
-        public async Task<Product> GetByIdAsync(Guid id, CancellationToken cancellationToken)
+        public async Task<Product> GetProductAsync(Guid categoryId, Guid productId, CancellationToken cancellationToken)
         {
-            var prodct = await Table.Where(p => p.ProductId == id).FirstOrDefaultAsync(cancellationToken);
-            return prodct;
+            return await TableNoTracking.FirstOrDefaultAsync(p => p.CategoryId == categoryId && p.ProductId == productId, cancellationToken);
+        }
+
+        public async Task<Product> GetProductAsync(Guid categoryId, string productName, CancellationToken cancellationToken)
+        {
+            return await TableNoTracking.FirstOrDefaultAsync(p => p.CategoryId == categoryId && p.ProductName == productName, cancellationToken);
+        }
+
+        public async Task<Product> GetProductAsync(Guid productId, CancellationToken cancellationToken)
+        {
+            return await TableNoTracking.FirstOrDefaultAsync(p => p.ProductId == productId, cancellationToken);
         }
 
         public async Task<IEnumerable<Product>> GetProductsByNameAsync(string name, CancellationToken cancellationToken)
         {
-            var prodcts = await TableNoTracking.Where(p => p.ProductName == name).ToListAsync(cancellationToken);
+            return await TableNoTracking.Where(p => p.ProductName.Contains(name)).ToListAsync(cancellationToken);
+        }
 
-            return prodcts;
+        public async Task<IEnumerable<Product>> GetProductsAsync(int take, int skip, CancellationToken cancellationToken)
+        {
+            return await TableNoTracking.Skip(skip).Take(take is 0 ? 10 : take).ToListAsync(cancellationToken);
         }
     }
 }

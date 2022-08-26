@@ -1,8 +1,10 @@
 ﻿using Entities.Interface;
 using Entities.Model;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Infrastructure
 {
@@ -15,10 +17,7 @@ namespace Infrastructure
 
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseLazyLoadingProxies();
-        }
+       
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -28,5 +27,6 @@ namespace Infrastructure
             builder.RegisterAllEntities<IEntity>(entity);
             builder.RegisterEntityTypeConfiguration(entity);
         }
+
     }
 }

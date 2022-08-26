@@ -24,5 +24,10 @@ namespace Infrastructure
         {
             await AppDbContext.SaveChangesAsync(cancellationToken);
         }
+
+        public void SaveChanges()
+        {
+            AppDbContext.SaveChanges();
+        }
     }
 }
