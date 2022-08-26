@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Infrastructure.Extensions
 {
-    public static class IServiceCollectionExtensions
+    public static class ServiceCollectionExtensions
     {
         /// <summary>
         /// Extension for Add Identity
@@ -30,6 +30,8 @@ namespace Infrastructure.Extensions
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer(connectionString);
+                // log every thing that related to database
+                options.LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name });
             });
         }
 
