@@ -3,7 +3,7 @@ using Sheard.Dto.Product;
 
 namespace Sheard.Command.Product
 {
-    public class InsertProductCommand : IRequest<InsertProductDto>
+    public class InsertProductCommand : IRequest<object>
     {
         public string ProductName { get; set; }
 

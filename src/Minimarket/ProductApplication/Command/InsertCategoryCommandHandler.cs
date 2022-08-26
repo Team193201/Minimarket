@@ -5,7 +5,7 @@ using Sheard.Dto.Category;
 
 namespace ProductApplication.Command
 {
-    public class InsertCategoryCommandHandler : IRequestHandler<InsertCategoryCommand, InsertCategoryDto>
+    public class InsertCategoryCommandHandler :  IRequestHandler<InsertCategoryCommand, InsertCategoryDto>
     {
         private IUnitOfWork UnitOfWork;
         public InsertCategoryCommandHandler(IUnitOfWork unitOfWork)
