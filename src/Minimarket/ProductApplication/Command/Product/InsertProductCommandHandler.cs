@@ -1,45 +1,50 @@
 ﻿using Infrastructure.Interface;
+using Infrastructure.Util;
 using MediatR;
 using Sheard.Command.Product;
-using Sheard.Dto.Product;
 
 namespace ProductApplication.Command
 {
-    public class InsertProductCommandHandler : IRequestHandler<InsertProductCommand, InsertProductDto>
+    public class InsertProductCommandHandler : IRequestHandler<InsertProductCommand, object>
     {
         private IUnitOfWork UnitOfWork;
-        public InsertProductCommandHandler(IUnitOfWork unitOfWork)
+        public IClassBuilder ClassBuilder;
+
+        public InsertProductCommandHandler(IUnitOfWork unitOfWork, IClassBuilder classBuilder)
         {
             UnitOfWork = unitOfWork;
+            ClassBuilder = classBuilder;
         }
 
-        public async Task<InsertProductDto> Handle(InsertProductCommand request, CancellationToken cancellationToken)
+        public async Task<object> Handle(InsertProductCommand request, CancellationToken cancellationToken)
         {
+
             var existCategory = await UnitOfWork.CategoryRepository.AnyCategoryIdAsync(request.CategoryId, cancellationToken);
-
-            ArgumentNullException.ThrowIfNull(!existCategory ? null : existCategory, $"{nameof(request.CategoryId)} is not valid");
-
-            UnitOfWork.ProductRepository.AddEntity(new Entities.Product
+            if (existCategory)
             {
-                CategoryId = request.CategoryId,
-                CreateDateTime = request.CreateDateTime,
-                ModifiDateTime = default(DateTime),
-                ProductId = Guid.NewGuid(),
-                ProductName = request.ProductName,
-                QuantityPerUnit = request.QuantityPerUnit,
-                UnitPrice = request.UnitPrice,
-                UnitsInStock = request.UnitsInStock
-            });
-            await UnitOfWork.SaveChangesAsync(cancellationToken);
-            return new InsertProductDto
+                UnitOfWork.ProductRepository.AddEntity(new Entities.Product
+                {
+                    CategoryId = request.CategoryId,
+                    CreateDateTime = request.CreateDateTime,
+                    ModifiDateTime = default(DateTime),
+                    ProductId = Guid.NewGuid(),
+                    ProductName = request.ProductName,
+                    QuantityPerUnit = request.QuantityPerUnit,
+                    UnitPrice = request.UnitPrice,
+                    UnitsInStock = request.UnitsInStock
+                });
+                await UnitOfWork.SaveChangesAsync(cancellationToken);
+                return ClassBuilder.BuildDynamicClass(
+                      new string[] { "CategoryId", "CreateDateTime", "ProductName", "QuantityPerUnit", "UnitPrice", "UnitsInStock" },
+                      new Type[] { typeof(Guid), typeof(DateTime), typeof(string), typeof(string), typeof(decimal), typeof(short) },
+                      new object[] { request.CategoryId, request.CreateDateTime, request.ProductName, request.QuantityPerUnit, request.UnitPrice, request.UnitsInStock });
+
+
+            }
+            else
             {
-                CategoryId = request.CategoryId,
-                CreateDateTime = request.CreateDateTime,
-                ProductName = request.ProductName,
-                QuantityPerUnit = request.QuantityPerUnit,
-                UnitPrice = request.UnitPrice,
-                UnitsInStock = request.UnitsInStock
-            };
+                throw new NullReferenceException("category is not found");
+            }
         }
     }
 }
