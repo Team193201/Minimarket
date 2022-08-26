@@ -2,13 +2,5 @@
 
 namespace Sheard.Command.Category
 {
-    public class UpdateCategoryCommand : IRequest<bool>
-    {
-        public Guid CategoryId { get; set; }
-        public string CategoryName { get; set; }
-
-        public string Description { get; set; }
-
-        public byte[] Picture { get; set; }
-    }
+    public record UpdateCategoryCommand(Guid categoryId , string categoryName , string description , byte[] picture) : IRequest<bool>;
 }

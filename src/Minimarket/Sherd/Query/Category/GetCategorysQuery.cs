@@ -2,9 +2,5 @@
 
 namespace Sheard.Query.Category
 {
-    public class GetCategorysQuery : IRequest<string>
-    {
-        public int Take { get; set; }
-        public int Skip { get; set; }
-    }
+    public record GetCategorysQuery(int take, int skip) : IRequest<string>;
 }
