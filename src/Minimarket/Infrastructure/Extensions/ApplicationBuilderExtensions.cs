@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Infrastructure.Middlewares;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -6,6 +7,9 @@ namespace Infrastructure.Extensions
 {
     public static class ApplicationBuilderExtensions
     {
+        /// <summary>
+        /// Init database sql server in run time
+        /// </summary>
         public static void IntializeDatabase(this IApplicationBuilder app)
         {
             using (var scope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
@@ -17,6 +21,15 @@ namespace Infrastructure.Extensions
                 //Applies any pending migrations for the context to the database like (Update-Database)
                 dbContext.Database.Migrate();
             }
+        }
+
+        /// <summary>
+        /// Handler every exception that event in app
+        /// </summary>
+        /// <param name="builder"></param>
+        public static IApplicationBuilder UseCustomException(this IApplicationBuilder builder)
+        {
+            return builder.UseMiddleware<CustomExceptionHandler>();
         }
     }
 }
