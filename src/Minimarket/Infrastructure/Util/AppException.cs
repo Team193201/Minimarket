@@ -2,12 +2,11 @@
 
 namespace Infrastructure.Util
 {
+    public record DataAppException(HttpStatusCode HttpStatusCode = HttpStatusCode.InternalServerError, object AdditionalData = null, bool IsLogge = false, DateTime DateTimeException = default);
+
     public class AppException : Exception
     {
-        public HttpStatusCode HttpStatusCode { get; set; }
-        public object AdditionalData { get; set; }
-        public bool IsLogge { get; set; }
-        public DateTime DateTimeException { get; set; }
+        public DataAppException DataApp { get; set; }
 
         /// <summary>
         /// AppException :Represents errors that occur during application execution. 
@@ -24,7 +23,7 @@ namespace Infrastructure.Util
         public AppException(bool isLogge = false)
          : this(string.Empty, isLogge)
         {
-            IsLogge = isLogge;
+            DataApp = new DataAppException(IsLogge: isLogge);
         }
 
         /// <summary>
@@ -35,7 +34,7 @@ namespace Infrastructure.Util
         public AppException(string message, bool isLogge = false)
          : this(message, HttpStatusCode.InternalServerError, isLogge)
         {
-            IsLogge = isLogge;
+            DataApp = new DataAppException(HttpStatusCode: HttpStatusCode.InternalServerError, IsLogge: isLogge);
         }
 
         /// <summary>
@@ -47,8 +46,7 @@ namespace Infrastructure.Util
         public AppException(string message, HttpStatusCode httpStatusCode, bool isLogge = false)
          : this(message, httpStatusCode, null, isLogge)
         {
-            HttpStatusCode = httpStatusCode;
-            IsLogge = isLogge;
+            DataApp = new DataAppException(HttpStatusCode: HttpStatusCode.InternalServerError, IsLogge: isLogge, AdditionalData: null);
         }
 
         /// <summary>
@@ -61,9 +59,8 @@ namespace Infrastructure.Util
         public AppException(string message, HttpStatusCode httpStatusCode, object additionalData, bool isLogge = false)
          : this(message, httpStatusCode, additionalData, default, isLogge)
         {
-            HttpStatusCode = httpStatusCode;
-            AdditionalData = additionalData;
-            IsLogge = isLogge;
+            DataApp = new DataAppException(HttpStatusCode: HttpStatusCode.InternalServerError, IsLogge: isLogge, AdditionalData: additionalData, DateTimeException: default);
+
         }
 
         /// <summary>
@@ -77,10 +74,7 @@ namespace Infrastructure.Util
         public AppException(string message, HttpStatusCode httpStatusCode, object additionalData, DateTime dateTimeException, bool isLogge = false)
           : this(message, httpStatusCode, additionalData, dateTimeException, null, isLogge)
         {
-            HttpStatusCode = httpStatusCode;
-            AdditionalData = additionalData;
-            DateTimeException = dateTimeException;
-            IsLogge = isLogge;
+            DataApp = new DataAppException(HttpStatusCode: HttpStatusCode.InternalServerError, IsLogge: isLogge, AdditionalData: additionalData, DateTimeException: dateTimeException);
         }
 
         /// <summary>
@@ -95,10 +89,7 @@ namespace Infrastructure.Util
         public AppException(string message, HttpStatusCode httpStatusCode, object additionalData, DateTime dateTimeException, Exception exception, bool isLogge = false)
             : base(message, exception)
         {
-            HttpStatusCode = httpStatusCode;
-            AdditionalData = additionalData;
-            DateTimeException = dateTimeException;
-            IsLogge = isLogge;
+            DataApp = new DataAppException(HttpStatusCode: HttpStatusCode.InternalServerError, IsLogge: isLogge, AdditionalData: additionalData, DateTimeException: dateTimeException);
         }
     }
 }
