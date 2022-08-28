@@ -34,6 +34,7 @@ var app = builder.Build();
 //--------------------------- Configure --------------------------------
 // Configure the HTTP request pipeline.
 app.IntializeDatabase();
+app.UseCustomException();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
