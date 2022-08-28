@@ -3,7 +3,7 @@
 namespace Infrastructure.Util
 {
     public class AppException : Exception
-    { 
+    {
         public HttpStatusCode HttpStatusCode { get; set; }
         public object AdditionalData { get; set; }
         public bool IsLogge { get; set; }
@@ -22,7 +22,7 @@ namespace Infrastructure.Util
         /// </summary>
         /// <param name="isLogge">default set false</param>
         public AppException(bool isLogge = false)
-         : this(string.Empty, HttpStatusCode.InternalServerError, isLogge)
+         : this(string.Empty, isLogge)
         {
             IsLogge = isLogge;
         }
