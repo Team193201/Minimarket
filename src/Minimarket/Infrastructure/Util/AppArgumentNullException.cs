@@ -4,7 +4,7 @@ namespace Infrastructure.Util
 {
     public class AppArgumentNullException : ArgumentNullException
     {
-        public static void ThrowIfNull(Guid argument,string paramName, string message = default, bool loggeError = false)
+        public static void ThrowIfNull(Guid argument, string paramName, string message = default, bool loggeError = false)
         {
             if (argument == Guid.Empty)
                 if (loggeError) { }
