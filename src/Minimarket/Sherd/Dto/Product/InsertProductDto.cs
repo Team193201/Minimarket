@@ -1,17 +1,4 @@
 ﻿namespace Sheard.Dto.Product
 {
-    public class InsertProductDto
-    {
-        public string ProductName { get; set; }
-
-        public Guid CategoryId { get; set; }
-
-        public string QuantityPerUnit { get; set; }
-
-        public decimal UnitPrice { get; set; }
-
-        public short UnitsInStock { get; set; }
-
-        public DateTime CreateDateTime { get; set; }
-    }
+    public record InsertProductDto(string ProductName, decimal Price, Guid CategoryId);
 }
