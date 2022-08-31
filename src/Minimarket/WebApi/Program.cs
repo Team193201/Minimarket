@@ -1,5 +1,6 @@
 using Infrastructure.Extensions;
 using MediatR;
+using ProductApplication;
 using Shaerd;
 using System.Reflection;
 
@@ -23,7 +24,7 @@ builder.Services.AddRepository();
 builder.Services.AddAppIdentity();
 
 
-builder.Services.AddMediatR(Assembly.GetEntryAssembly());
+builder.Services.AddMediatR(typeof(IProductApplication));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
