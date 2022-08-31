@@ -4,7 +4,7 @@ using Sheard.Command.Product;
 
 namespace ProductApplication.Command
 {
-    public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommand, bool>
+    public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommand, Guid>
     {
         private readonly IUnitOfWork UnitOfWork;
         public DeleteProductCommandHandler(IUnitOfWork unitOfWork)
@@ -12,16 +12,16 @@ namespace ProductApplication.Command
             UnitOfWork = unitOfWork;
         }
 
-        public async Task<bool> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
+        public async Task<Guid> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
         {
 
-            ArgumentNullException.ThrowIfNull(request.ProductId == Guid.Empty);
+          //  ArgumentNullException.ThrowIfNull(request.ProductId == Guid.Empty);
 
             var product = await UnitOfWork.ProductRepository.GetProductAsync(request.ProductId, cancellationToken);
             UnitOfWork.ProductRepository.DeleteEntity(product);
             await UnitOfWork.SaveChangesAsync(cancellationToken);
 
-            return true;
+            return request.ProductId;
         }
     }
 }

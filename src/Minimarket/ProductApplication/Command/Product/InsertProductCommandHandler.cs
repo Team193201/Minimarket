@@ -1,45 +1,36 @@
 ﻿using Infrastructure.Interface;
-using Infrastructure.Util;
 using MediatR;
 using Sheard.Command.Product;
+using Sheard.Dto.Product;
 
 namespace ProductApplication.Command
 {
-    public class InsertProductCommandHandler : IRequestHandler<InsertProductCommand, object>
+    public class InsertProductCommandHandler : IRequestHandler<InsertProductCommand, GetProductDto>
     {
         private IUnitOfWork UnitOfWork;
-        public IClassBuilder ClassBuilder;
-
-        public InsertProductCommandHandler(IUnitOfWork unitOfWork, IClassBuilder classBuilder)
+        public InsertProductCommandHandler(IUnitOfWork unitOfWork)
         {
             UnitOfWork = unitOfWork;
-            ClassBuilder = classBuilder;
         }
 
-        public async Task<object> Handle(InsertProductCommand request, CancellationToken cancellationToken)
+        public async Task<GetProductDto> Handle(InsertProductCommand request, CancellationToken cancellationToken)
         {
 
-            var existCategory = await UnitOfWork.CategoryRepository.AnyCategoryIdAsync(request.CategoryId, cancellationToken);
+            var existCategory = await UnitOfWork.CategoryRepository.AnyCategoryIdAsync(request.Dto.CategoryId, cancellationToken);
             if (existCategory)
             {
                 UnitOfWork.ProductRepository.AddEntity(new Entities.Product
                 {
-                    CategoryId = request.CategoryId,
-                    CreateDateTime = request.CreateDateTime,
+                    CategoryId = request.Dto.CategoryId,
+                    CreateDateTime = DateTime.UtcNow,
                     ModifiDateTime = default(DateTime),
                     ProductId = Guid.NewGuid(),
-                    ProductName = request.ProductName,
-                    QuantityPerUnit = request.QuantityPerUnit,
-                    UnitPrice = request.UnitPrice,
-                    UnitsInStock = request.UnitsInStock
+                    ProductName = request.Dto.ProductName,
+                    Price = request.Dto.Price,
                 });
                 await UnitOfWork.SaveChangesAsync(cancellationToken);
-                return ClassBuilder.BuildDynamicClass(
-                      new string[] { "CategoryId", "CreateDateTime", "ProductName", "QuantityPerUnit", "UnitPrice", "UnitsInStock" },
-                      new Type[] { typeof(Guid), typeof(DateTime), typeof(string), typeof(string), typeof(decimal), typeof(short) },
-                      new object[] { request.CategoryId, request.CreateDateTime, request.ProductName, request.QuantityPerUnit, request.UnitPrice, request.UnitsInStock });
 
-
+                return new GetProductDto(request.Dto.ProductName, request.Dto.Price, request.Dto.CategoryId, DateTime.UtcNow, default);
             }
             else
             {

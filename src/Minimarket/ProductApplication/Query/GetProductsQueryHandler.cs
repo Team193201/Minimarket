@@ -1,21 +1,23 @@
 ﻿using Infrastructure.Interface;
 using MediatR;
+using Sheard.Dto.Product;
 using Sheard.Query.Product;
 
 namespace ProductApplication.Query.Handler
 {
-    public class GetProductsQueryHandler : IRequestHandler<GetProductsQuery, List<string>>
+    public class GetProductsQueryHandler : IRequestHandler<GetProductsQuery, List<GetProductDto>>
     {
         private readonly IUnitOfWork UnitOfWork;
         public GetProductsQueryHandler(IUnitOfWork unitOfWork)
         {
             UnitOfWork = unitOfWork;
         }
-        public async Task<List<string>> Handle(GetProductsQuery request, CancellationToken cancellationToken)
+        public async Task<List<GetProductDto>> Handle(GetProductsQuery request, CancellationToken cancellationToken)
         {
-            await UnitOfWork.ProductRepository.GetProductsAsync(request.Take, request.Skip, cancellationToken);
+           var products= await UnitOfWork.ProductRepository.GetProductsAsync(request.Take, request.Skip, cancellationToken);
 
-            return new List<string>();
+            //TODO mapping
+            return new List<GetProductDto>();
         }
     }
 }

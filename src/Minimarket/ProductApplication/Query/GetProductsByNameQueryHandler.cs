@@ -1,10 +1,11 @@
 ﻿using Infrastructure.Interface;
 using MediatR;
+using Sheard.Dto.Product;
 using Sheard.Query.Product;
 
 namespace ProductApplication.Query.Handler
 {
-    public class GetProductsByNameQueryHandler : IRequestHandler<GetProductsByNameQuery, List<string>>
+    public class GetProductsByNameQueryHandler : IRequestHandler<GetProductsByNameQuery, List<GetProductDto>>
     {
         private readonly IUnitOfWork UnitOfWork;
         public GetProductsByNameQueryHandler(IUnitOfWork unitOfWork)
@@ -12,13 +13,14 @@ namespace ProductApplication.Query.Handler
             UnitOfWork = unitOfWork;
         }
 
-        public async Task<List<string>> Handle(GetProductsByNameQuery request, CancellationToken cancellationToken)
+        public async Task<List<GetProductDto>> Handle(GetProductsByNameQuery request, CancellationToken cancellationToken)
         {
             ArgumentNullException.ThrowIfNull(request.ProductName);
 
-            await UnitOfWork.ProductRepository.GetProductsByNameAsync(request.ProductName, cancellationToken);
+            var products = await UnitOfWork.ProductRepository.GetProductsByNameAsync(request.ProductName, cancellationToken);
 
-            return new List<string>();
+            //TODO mapping
+            return new List<GetProductDto>();
         }
     }
 }

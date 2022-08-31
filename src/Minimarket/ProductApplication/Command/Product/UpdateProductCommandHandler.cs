@@ -2,11 +2,11 @@
 using Infrastructure.Interface;
 using MediatR;
 using Sheard.Command.Product;
-using Infrastructure.Extensions;
+using Sheard.Dto.Product;
 
 namespace ProductApplication.Command
 {
-    public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand, string>
+    public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand, GetProductDto>
     {
         private readonly IUnitOfWork UnitOfWork;
         public UpdateProductCommandHandler(IUnitOfWork unitOfWork)
@@ -14,20 +14,24 @@ namespace ProductApplication.Command
             UnitOfWork = unitOfWork;
         }
 
-        public async Task<string> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
+        public async Task<GetProductDto> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
         {
             Product product = new();
 
-            if (request.ProductId != Guid.Empty && string.IsNullOrEmpty(request.ProductName) && request.CategoryId == Guid.Empty)
+            if (request.ProductId != Guid.Empty && string.IsNullOrEmpty(request.Dto.ProductName) && request.Dto.CategoryId == Guid.Empty)
                 product = await UnitOfWork.ProductRepository.GetProductAsync(request.ProductId, cancellationToken);
 
-            else if (!string.IsNullOrEmpty(request.ProductName) && request.ProductId == Guid.Empty && request.CategoryId != Guid.Empty)
-                product = await UnitOfWork.ProductRepository.GetProductAsync(request.CategoryId, request.ProductName, cancellationToken);
+            else if (!string.IsNullOrEmpty(request.Dto.ProductName) && request.ProductId == Guid.Empty && request.Dto.CategoryId != Guid.Empty)
+                product = await UnitOfWork.ProductRepository.GetProductAsync(request.Dto.CategoryId, request.Dto.ProductName, cancellationToken);
 
-            else if (request.ProductId != Guid.Empty && string.IsNullOrEmpty(request.ProductName) && request.CategoryId != Guid.Empty)
-                product = await UnitOfWork.ProductRepository.GetProductAsync(request.CategoryId, request.ProductId, cancellationToken);
+            else if (request.ProductId != Guid.Empty && string.IsNullOrEmpty(request.Dto.ProductName) && request.Dto.CategoryId != Guid.Empty)
+                product = await UnitOfWork.ProductRepository.GetProductAsync(request.Dto.CategoryId, request.ProductId, cancellationToken);
 
-            return string.Empty;
+            UnitOfWork.ProductRepository.UpdateEntity(product);
+
+            await UnitOfWork.SaveChangesAsync(cancellationToken);
+
+            return new GetProductDto(product.ProductName, product.Price, product.CategoryId, product.CreateDateTime, product.ModifiDateTime);
         }
     }
 }

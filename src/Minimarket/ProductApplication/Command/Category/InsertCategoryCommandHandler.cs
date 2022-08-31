@@ -5,7 +5,7 @@ using Sheard.Dto.Category;
 
 namespace ProductApplication.Command
 {
-    public class InsertCategoryCommandHandler : IRequestHandler<InsertCategoryCommand, InsertCategoryDto>
+    public class InsertCategoryCommandHandler : IRequestHandler<InsertCategoryCommand, GetCategoryDto>
     {
         private IUnitOfWork UnitOfWork;
         public InsertCategoryCommandHandler(IUnitOfWork unitOfWork)
@@ -13,26 +13,23 @@ namespace ProductApplication.Command
             UnitOfWork = unitOfWork;
         }
 
-        public async Task<InsertCategoryDto> Handle(InsertCategoryCommand request, CancellationToken cancellationToken)
+        public async Task<GetCategoryDto> Handle(InsertCategoryCommand request, CancellationToken cancellationToken)
         {
-            var existCategory = await UnitOfWork.CategoryRepository.AnyCategoryNameAsync(request.categoryName, cancellationToken);
+            var existCategory = await UnitOfWork.CategoryRepository.AnyCategoryNameAsync(request.Dto.CategoryName, cancellationToken);
             if (existCategory)
-                throw new ArgumentNullException($"{request.categoryName} is exist");
+                throw new ArgumentNullException($"{request.Dto.CategoryName} is exist");
 
             UnitOfWork.CategoryRepository.AddEntity(new Entities.Category
             {
                 CategoryId = Guid.NewGuid(),
-                CategoryName = request.categoryName,
-                Picture = request.picture,
-                Description = request.description
+                CategoryName = request.Dto.CategoryName,
+                Description = request.Dto.CategoryName,
+                CreateDateTime = DateTime.UtcNow,
+                ModifiDateTime = default
             });
             await UnitOfWork.SaveChangesAsync(cancellationToken);
-            return new InsertCategoryDto
-            {
-                CategoryName = request.categoryName,
-                Description = request.description,
-                Picture = request.picture,
-            };
+
+            return new GetCategoryDto(request.Dto.CategoryName, request.Dto.Description, DateTime.UtcNow, default);
         }
     }
 }
