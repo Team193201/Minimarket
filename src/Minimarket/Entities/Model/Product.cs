@@ -11,17 +11,8 @@ namespace Entities
         [Display(Name = "نام محصول"), Required]
         public string ProductName { get; set; }
 
-        [Display(Name = "دسته بندی"), Required]
-        public Guid CategoryId { get; set; }
-
-        [Display(Name = "مقدار در واحد"), Required]
-        public string QuantityPerUnit { get; set; }
-
-        [Display(Name = "قیمت واحد"), Required]
-        public decimal UnitPrice { get; set; }
-
-        [Display(Name = "موجودی واحد"), Required]
-        public short UnitsInStock { get; set; }
+        [Display(Name = "قیمت"), Required]
+        public decimal Price { get; set; }
 
         [Display(Name = "تاریخ ایجاد")]
         public DateTime CreateDateTime { get; set; }
@@ -29,6 +20,9 @@ namespace Entities
         [Display(Name = "تاریخ ویرایش")]
         public DateTime ModifiDateTime { get; set; }
 
+
+        [Display(Name = "دسته بندی"), Required]
+        public Guid CategoryId { get; set; }
         public Category Category { get; set; }
     }
 }

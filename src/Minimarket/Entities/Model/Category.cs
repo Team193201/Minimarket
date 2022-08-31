@@ -14,8 +14,11 @@ namespace Entities
         [Display(Name = "شرح"), Required]
         public string Description { get; set; }
 
-        [Display(Name = "تصویر"), Required]
-        public byte[] Picture { get; set; }
+        [Display(Name = "تاریخ ایجاد")]
+        public DateTime CreateDateTime { get; set; }
+
+        [Display(Name = "تاریخ ویرایش")]
+        public DateTime ModifiDateTime { get; set; }
 
         public ICollection<Product> Products { get; set; }
     }
