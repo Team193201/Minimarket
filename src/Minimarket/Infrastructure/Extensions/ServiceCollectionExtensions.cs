@@ -41,7 +41,8 @@ namespace Infrastructure.Extensions
         /// <param name="services"></param>
         public static void AddRepository(this IServiceCollection services)
         {
-            // Add Repository With Scoped 
+            services.AddTransient(typeof(IUnitOfWork), typeof(UnitOfWork));
+
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
             services.AddScoped(typeof(ICategoryRepository), typeof(CategoryRepository));
