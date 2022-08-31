@@ -34,24 +34,14 @@ namespace WebApi.Controllers
         [HttpPost("")]
         public async Task<IActionResult> Post(InsertCategoryDto insertCategoryDto, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new InsertCategoryCommand
-            (
-                 insertCategoryDto.CategoryName,
-                 insertCategoryDto.Description,
-                 insertCategoryDto.Picture
-            ), cancellationToken);
+            var result = await mediator.Send(new InsertCategoryCommand(insertCategoryDto), cancellationToken);
             return Ok(new ApiResult(result));
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(Guid id, UpdateCategoryDto updateCategoryDto, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new UpdateCategoryCommand(
-                id,
-                updateCategoryDto.CategoryName,
-                updateCategoryDto.Description,
-                updateCategoryDto.Picture
-            ), cancellationToken);
+            var result = await mediator.Send(new UpdateCategoryCommand(id, updateCategoryDto), cancellationToken);
             return Ok(new ApiResult(result));
         }
 

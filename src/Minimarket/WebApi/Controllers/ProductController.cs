@@ -34,32 +34,14 @@ namespace WebApi.Controllers
         [HttpPost("")]
         public async Task<IActionResult> Post(InsertProductDto insertProductDto, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new InsertProductCommand
-            {
-                CategoryId = insertProductDto.CategoryId,
-                CreateDateTime = DateTime.UtcNow,
-                ProductName = insertProductDto.ProductName,
-                QuantityPerUnit = insertProductDto.QuantityPerUnit,
-                UnitPrice = insertProductDto.UnitPrice,
-                UnitsInStock = insertProductDto.UnitsInStock,
-            });
-
+            var result = await mediator.Send(new InsertProductCommand(insertProductDto));
             return Ok(new ApiResult(result));
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(Guid id, UpdateProductDto productDto, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new UpdateProductCommand
-            {
-                CategoryId = productDto.CategoryId,
-                ProductName = productDto.ProductName,
-                QuantityPerUnit = productDto.QuantityPerUnit,
-                UnitPrice = productDto.UnitPrice,
-                UnitsInStock = productDto.UnitsInStock,
-                ProductId = id
-            });
-
+            var result = await mediator.Send(new UpdateProductCommand(id, productDto));
             return Ok(new ApiResult(result));
         }
 
