@@ -1,14 +1,7 @@
 ﻿using MediatR;
+using Sheard.Dto.Product;
 
 namespace Sheard.Command.Product
 {
-    public record UpdateProductCommand : IRequest<string>
-    {
-        public Guid ProductId { get; set; }
-        public string ProductName { get; set; }
-        public Guid CategoryId { get; set; }
-        public decimal UnitPrice { get; set; }
-        public short UnitsInStock { get; set; }
-        public string QuantityPerUnit { get; set; }
-    }
+    public record UpdateProductCommand(Guid ProductId, UpdateProductDto Dto) : IRequest<GetProductDto>;
 }

@@ -2,5 +2,5 @@
 
 namespace Sheard.Command.Category
 {
-    public record DeleteCategoryCommand(Guid categoryId) : IRequest<bool>;
+    public record DeleteCategoryCommand(Guid categoryId) : IRequest<Guid>;
 }

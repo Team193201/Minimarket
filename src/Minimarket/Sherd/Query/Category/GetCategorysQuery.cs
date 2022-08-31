@@ -1,6 +1,7 @@
 ﻿using MediatR;
+using Sheard.Dto.Category;
 
 namespace Sheard.Query.Category
 {
-    public record GetCategorysQuery(int take, int skip) : IRequest<string>;
+    public record GetCategorysQuery(int Take, int Skip) : IRequest<List<GetCategoryDto>>;
 }
