@@ -19,10 +19,10 @@ namespace Infrastructure
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            var entity = typeof(IEntity).Assembly;
+            var entites = typeof(IEntity).Assembly;
 
-            builder.RegisterAllEntities<IEntity>(entity);
-            builder.RegisterEntityTypeConfiguration(entity);
+            builder.RegisterAllEntities<IEntity>(entites);
+            builder.RegisterEntityTypeConfiguration(entites);
         }
     }
 }

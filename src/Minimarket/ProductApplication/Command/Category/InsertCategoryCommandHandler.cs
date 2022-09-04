@@ -23,7 +23,7 @@ namespace ProductApplication.Command
             {
                 CategoryId = Guid.NewGuid(),
                 CategoryName = request.Dto.CategoryName,
-                Description = request.Dto.CategoryName,
+                Description = request.Dto.Description,
                 CreateDateTime = DateTime.UtcNow,
                 ModifiDateTime = default
             });

@@ -34,7 +34,7 @@ namespace WebApi.Controllers
         [HttpPost("")]
         public async Task<IActionResult> Post(InsertCategoryDto insertCategoryDto, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new InsertCategoryCommand(insertCategoryDto), cancellationToken);
+            var result = await mediator.Send (new InsertCategoryCommand(insertCategoryDto), cancellationToken);
             return Ok(new ApiResult(result));
         }
 
