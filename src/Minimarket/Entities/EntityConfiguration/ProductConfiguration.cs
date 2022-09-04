@@ -9,6 +9,7 @@ namespace Entities.EntityConfiguration
         {
             // builder.ToTable("","");
             builder.HasKey(e => e.ProductId); //make up the primary key
+            builder.HasIndex(e => e.ProductName).IsUnique(true); // set index and set unique
 
             builder.HasOne(c => c.Category)
                 .WithMany(p => p.Products)
