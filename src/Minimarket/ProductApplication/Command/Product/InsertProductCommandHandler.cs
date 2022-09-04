@@ -17,25 +17,21 @@ namespace ProductApplication.Command
         {
 
             var existCategory = await UnitOfWork.CategoryRepository.AnyCategoryIdAsync(request.Dto.CategoryId, cancellationToken);
-            if (existCategory)
-            {
-                UnitOfWork.ProductRepository.AddEntity(new Entities.Product
-                {
-                    CategoryId = request.Dto.CategoryId,
-                    CreateDateTime = DateTime.UtcNow,
-                    ModifiDateTime = default(DateTime),
-                    ProductId = Guid.NewGuid(),
-                    ProductName = request.Dto.ProductName,
-                    Price = request.Dto.Price,
-                });
-                await UnitOfWork.SaveChangesAsync(cancellationToken);
-
-                return new GetProductDto(request.Dto.ProductName, request.Dto.Price, request.Dto.CategoryId, DateTime.UtcNow, default);
-            }
-            else
-            {
+            if (!existCategory)
                 throw new NullReferenceException("category is not found");
-            }
+
+            UnitOfWork.ProductRepository.AddEntity(new Entities.Product
+            {
+                CategoryId = request.Dto.CategoryId,
+                CreateDateTime = DateTime.UtcNow,
+                ModifiDateTime = default(DateTime),
+                ProductId = Guid.NewGuid(),
+                ProductName = request.Dto.ProductName,
+                Price = request.Dto.Price,
+            });
+            await UnitOfWork.SaveChangesAsync(cancellationToken);
+
+            return new GetProductDto(request.Dto.ProductName, request.Dto.Price, request.Dto.CategoryId, DateTime.UtcNow, default);
         }
     }
 }

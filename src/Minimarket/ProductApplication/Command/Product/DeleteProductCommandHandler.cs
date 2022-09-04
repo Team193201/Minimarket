@@ -14,9 +14,6 @@ namespace ProductApplication.Command
 
         public async Task<Guid> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
         {
-
-          //  ArgumentNullException.ThrowIfNull(request.ProductId == Guid.Empty);
-
             var product = await UnitOfWork.ProductRepository.GetProductAsync(request.ProductId, cancellationToken);
             UnitOfWork.ProductRepository.DeleteEntity(product);
             await UnitOfWork.SaveChangesAsync(cancellationToken);

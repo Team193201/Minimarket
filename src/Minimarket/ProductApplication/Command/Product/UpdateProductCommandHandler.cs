@@ -18,14 +18,16 @@ namespace ProductApplication.Command
         {
             Product product = new();
 
-            if (request.ProductId != Guid.Empty && string.IsNullOrEmpty(request.Dto.ProductName) && request.Dto.CategoryId == Guid.Empty)
+            if (request.ProductId != Guid.Empty && string.IsNullOrEmpty(request.Dto.ProductName) && request.Dto.CategoryId != Guid.Empty)
+                product = await UnitOfWork.ProductRepository.GetProductAsync(request.Dto.CategoryId, request.ProductId, cancellationToken);
+            else if (request.ProductId == Guid.Empty && !string.IsNullOrEmpty(request.Dto.ProductName) && request.Dto.CategoryId != Guid.Empty)
+                product = await UnitOfWork.ProductRepository.GetProductAsync(request.Dto.CategoryId, request.Dto.ProductName, cancellationToken);
+            else
                 product = await UnitOfWork.ProductRepository.GetProductAsync(request.ProductId, cancellationToken);
 
-            else if (!string.IsNullOrEmpty(request.Dto.ProductName) && request.ProductId == Guid.Empty && request.Dto.CategoryId != Guid.Empty)
-                product = await UnitOfWork.ProductRepository.GetProductAsync(request.Dto.CategoryId, request.Dto.ProductName, cancellationToken);
-
-            else if (request.ProductId != Guid.Empty && string.IsNullOrEmpty(request.Dto.ProductName) && request.Dto.CategoryId != Guid.Empty)
-                product = await UnitOfWork.ProductRepository.GetProductAsync(request.Dto.CategoryId, request.ProductId, cancellationToken);
+            product.ProductName = request.Dto.ProductName ?? product.ProductName;
+            product.Price = request.Dto.Price;
+            product.ModifiDateTime = DateTime.Now;
 
             UnitOfWork.ProductRepository.UpdateEntity(product);
 
