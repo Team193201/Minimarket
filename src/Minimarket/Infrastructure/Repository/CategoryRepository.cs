@@ -1,8 +1,6 @@
 ﻿using Entities;
 using Infrastructure.Interface;
 using Microsoft.EntityFrameworkCore;
-using Sheard.Command.Category;
-using Sheard.Dto.Category;
 
 namespace Infrastructure.Repository
 {
@@ -31,20 +29,9 @@ namespace Infrastructure.Repository
             return category;
         }
 
-        public async Task<Category> UpdateCategoryAsync(UpdateCategoryCommand request, CancellationToken cancellationToken)
+        public async Task<Category> UpdateCategoryAsync(Guid? categoryId, CancellationToken cancellationToken)
         {
-            if (request != null)
-            {
-                return await Table.Where(c => c.CategoryId == request.CategoryId)
-                      .Select(c => new Category
-                      {
-                          CategoryId = c.CategoryId,
-                          CategoryName = request.Dto.CategoryName,
-                          Description = request.Dto.description,
-                          ModifiDateTime = DateTime.Now
-                      }).FirstOrDefaultAsync();
-            }
-            return null;
+            return await Table.Where(c => c.CategoryId == categoryId).FirstOrDefaultAsync();
         }
     }
 }

@@ -14,7 +14,11 @@ namespace ProductApplication.Command.Category
         }
         public async Task<GetCategoryDto> Handle(UpdateCategoryCommand request, CancellationToken cancellationToken)
         {
-            var category = await unitOfWork.CategoryRepository.UpdateCategoryAsync(request, cancellationToken);
+            var category = await unitOfWork.CategoryRepository.UpdateCategoryAsync(request.CategoryId, cancellationToken);
+            category.CategoryName = request.Dto.CategoryName;
+            category.Description = request.Dto.description;
+            category.ModifiDateTime = DateTime.Now;
+
             unitOfWork.CategoryRepository.UpdateEntity(category);
             await unitOfWork.SaveChangesAsync(cancellationToken);
             return new GetCategoryDto(category.CategoryName, category.Description, category.CreateDateTime, category.ModifiDateTime);
