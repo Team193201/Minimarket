@@ -27,12 +27,16 @@ namespace Infrastructure.Repository
 
         public async Task<Category> GetCategoryByIdAsync(Guid? id, CancellationToken cancellationToken)
         {
+            //TODO does not need use from table 
             var category = await Table.FirstOrDefaultAsync(c => c.CategoryId == id, cancellationToken);
             return category;
         }
 
         public async Task<Category> UpdateCategoryAsync(UpdateCategoryCommand request, CancellationToken cancellationToken)
         {
+            //TODO transfer Business code to handler and use TableNoTracking
+            //if you use table ef Tracking your entity and we dont need this in catgory and product 
+            
             if (request != null)
             {
                 return await Table.Where(c => c.CategoryId == request.CategoryId)

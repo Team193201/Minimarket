@@ -14,6 +14,7 @@ namespace ProductApplication.Command.Category
         }
         public async Task<GetCategoryDto> Handle(UpdateCategoryCommand request, CancellationToken cancellationToken)
         {
+            //TODO: we can not send command to data layer becues command from Business layer 
             var category = await unitOfWork.CategoryRepository.UpdateCategoryAsync(request, cancellationToken);
             unitOfWork.CategoryRepository.UpdateEntity(category);
             await unitOfWork.SaveChangesAsync(cancellationToken);
