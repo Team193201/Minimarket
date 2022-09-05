@@ -25,13 +25,25 @@ namespace Infrastructure.Repository
 
         public async Task<Category> GetCategoryByIdAsync(Guid? id, CancellationToken cancellationToken)
         {
+            //TODO does not need use from table 
             var category = await Table.FirstOrDefaultAsync(c => c.CategoryId == id, cancellationToken);
             return category;
         }
 
         public async Task<Category> UpdateCategoryAsync(Guid? categoryId, CancellationToken cancellationToken)
         {
-            return await Table.Where(c => c.CategoryId == categoryId).FirstOrDefaultAsync();
+            if (request != null)
+            {
+                return await Table.Where(c => c.CategoryId == request.CategoryId)
+                      .Select(c => new Category
+                      {
+                          CategoryId = c.CategoryId,
+                          CategoryName = request.Dto.CategoryName,
+                          Description = request.Dto.description,
+                          ModifiDateTime = DateTime.Now
+                      }).FirstOrDefaultAsync();
+            }
+            return null;
         }
     }
 }

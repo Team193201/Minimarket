@@ -14,6 +14,8 @@ namespace ProductApplication.Query.Category
         }
         public async Task<GetCategoryDto> Handle(GetCategoryByIdQuery request, CancellationToken cancellationToken)
         {
+            //TODO you frist check exist data and after that get data
+            //there is mistake becuse you send two request to database and this is not well
             var existCategory = await unitOfWork.CategoryRepository.AnyCategoryIdAsync(request.CategoryId, cancellationToken);
             if (existCategory)
             {
