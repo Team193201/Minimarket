@@ -7,8 +7,6 @@ I and my team will be happy if you want to join us . good luck
 ## Authors
 
 - [@Sahar Ghorbanzad](https://github.com/saharGhorbanzad)
-- [@Sheyda Ahmadipour](https://github.com/she1da)
-- [@Omid Abiry](https://github.com/OmidAbiry)
 - [@Hossein Golmohammadi](https://github.com/Hosein201)
 
 
