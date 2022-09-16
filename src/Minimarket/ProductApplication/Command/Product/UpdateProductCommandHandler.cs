@@ -16,26 +16,24 @@ namespace ProductApplication.Command
 
         public async Task<GetProductDto> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
         {
-            //  Product product = new Command.Product();
+            Product product = new Entities.Product();
 
-            //    if (request.ProductId != Guid.Empty && string.IsNullOrEmpty(request.Dto.ProductName) && request.Dto.CategoryId != Guid.Empty)
-            //        product = await UnitOfWork.ProductRepository.GetProductAsync(request.Dto.CategoryId, request.ProductId, cancellationToken);
-            //    else if (request.ProductId == Guid.Empty && !string.IsNullOrEmpty(request.Dto.ProductName) && request.Dto.CategoryId != Guid.Empty)
-            //        product = await UnitOfWork.ProductRepository.GetProductAsync(request.Dto.CategoryId, request.Dto.ProductName, cancellationToken);
-            //    else
-            //        product = await UnitOfWork.ProductRepository.GetProductAsync(request.ProductId, cancellationToken);
+            if (request.ProductId != Guid.Empty && string.IsNullOrEmpty(request.Dto.ProductName) && request.Dto.CategoryId != Guid.Empty)
+                product = await UnitOfWork.ProductRepository.GetProductAsync(request.Dto.CategoryId, request.ProductId, cancellationToken);
+            else if (request.ProductId == Guid.Empty && !string.IsNullOrEmpty(request.Dto.ProductName) && request.Dto.CategoryId != Guid.Empty)
+                product = await UnitOfWork.ProductRepository.GetProductAsync(request.Dto.CategoryId, request.Dto.ProductName, cancellationToken);
+            else
+                product = await UnitOfWork.ProductRepository.GetProductAsync(request.ProductId, cancellationToken);
 
-            //    product.ProductName = request.Dto.ProductName ?? product.ProductName;
-            //    product.Price = request.Dto.Price;
-            //    product.ModifiDateTime = DateTime.Now;
+            product.ProductName = request.Dto.ProductName ?? product.ProductName;
+            product.Price = request.Dto.Price;
+            product.ModifiDateTime = DateTime.Now;
 
-            //    UnitOfWork.ProductRepository.UpdateEntity(product);
+            UnitOfWork.ProductRepository.UpdateEntity(product);
 
-            //    await UnitOfWork.SaveChangesAsync(cancellationToken);
+            await UnitOfWork.SaveChangesAsync(cancellationToken);
 
-            //    return new GetProductDto(product.ProductName, product.Price, product.CategoryId, product.CreateDateTime, product.ModifiDateTime);
-            return null;
-       // }
+            return new GetProductDto(product.ProductName, product.Price, product.CategoryId, product.CreateDateTime, product.ModifiDateTime);
         }
     }
 }

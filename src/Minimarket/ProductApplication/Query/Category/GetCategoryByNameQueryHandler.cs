@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ProductApplication.Query.Category
 {
-    public class GetCategoryByNameQueryHandler : IRequestHandler<GetCategoryByNameQuery,List< GetCategoryFullDto>>
+    public class GetCategoryByNameQueryHandler : IRequestHandler<GetCategoryByNameQuery,List< GetCategoryDto>>
     {
         private readonly IUnitOfWork unitOfWork;
         public GetCategoryByNameQueryHandler(IUnitOfWork _unitOfWork)
@@ -18,7 +18,7 @@ namespace ProductApplication.Query.Category
             unitOfWork = _unitOfWork;
         }
 
-        public async Task<List<GetCategoryFullDto>> Handle(GetCategoryByNameQuery request, CancellationToken cancellationToken)
+        public async Task<List<GetCategoryDto>> Handle(GetCategoryByNameQuery request, CancellationToken cancellationToken)
         {
             var category = await unitOfWork.CategoryRepository.GetCategoryByNameAsync(request.CategoryName, cancellationToken);
 

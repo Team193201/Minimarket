@@ -21,7 +21,7 @@ namespace ProductApplication.Command.Category
 
             unitOfWork.CategoryRepository.UpdateEntity(category);
             await unitOfWork.SaveChangesAsync(cancellationToken);
-            return new GetCategoryDto(category.CategoryName, category.Description, category.CreateDateTime, category.ModifiDateTime);
+            return new GetCategoryDto(request.CategoryId, category.CategoryName, category.Description, category.CreateDateTime, category.ModifiDateTime);
 
         }
     }

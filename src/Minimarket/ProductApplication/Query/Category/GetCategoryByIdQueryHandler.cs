@@ -21,11 +21,12 @@ namespace ProductApplication.Query.Category
             {
                 var category = await unitOfWork.CategoryRepository.GetCategoryByIdAsync(request.CategoryId, cancellationToken);
                 var categoryResult = new GetCategoryDto
-                (
-                     category.CategoryName,
-                     category.Description,
-                     category.ModifiDateTime,
-                     category.CreateDateTime
+                    (
+                    category.CategoryId,
+                    category.CategoryName,
+                    category.Description,
+                    category.ModifiDateTime,
+                    category.CreateDateTime
                 );
                 return categoryResult;
             }

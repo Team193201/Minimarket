@@ -19,9 +19,10 @@ namespace ProductApplication.Command
             if (existCategory)
                 throw new ArgumentNullException($"{request.Dto.CategoryName} is exist");
 
+            var categoryId = Guid.NewGuid();
             UnitOfWork.CategoryRepository.AddEntity(new Entities.Category
             {
-                CategoryId = Guid.NewGuid(),
+                CategoryId = categoryId,
                 CategoryName = request.Dto.CategoryName,
                 Description = request.Dto.Description,
                 CreateDateTime = DateTime.UtcNow,
@@ -29,7 +30,7 @@ namespace ProductApplication.Command
             });
             await UnitOfWork.SaveChangesAsync(cancellationToken);
 
-            return new GetCategoryDto( request.Dto.CategoryName, request.Dto.Description, DateTime.UtcNow, default);
+            return new GetCategoryDto(categoryId, request.Dto.CategoryName, request.Dto.Description, DateTime.UtcNow, default);
         }
     }
 }
