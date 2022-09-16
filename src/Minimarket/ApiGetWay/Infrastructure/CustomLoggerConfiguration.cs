@@ -30,7 +30,7 @@ namespace ApiGetWay.Infrastructure
             return logger;
         }
 
-        public static LoggerConfiguration WriteToFile(this LoggerSinkConfiguration sinkConfiguration, FileStting fileStting, string appRootPath)
+        private static LoggerConfiguration WriteToFile(this LoggerSinkConfiguration sinkConfiguration, FileStting fileStting, string appRootPath)
         {
             return sinkConfiguration.File(
                  restrictedToMinimumLevel: LogEventLevel.Debug,
