@@ -1,0 +1,22 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/category/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7247
+                }
+            ],
+            "UpstreamPathTemplate": "/api/v1/category/{id}",
+            "UpstreamHttpMethod": [
+                "Get",
+                "Delete"
+            ]
+        }
+    ],
+    "GlobalConfiguration": {
+        "RequestIdKey": "OcRequestId"
+    }
+}

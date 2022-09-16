@@ -2,24 +2,15 @@ using Infrastructure.Extensions;
 using MediatR;
 using ProductApplication;
 using Shaerd;
-using System.Reflection;
-
-var applicationSetting = new ApplicationSetting();
 
 var builder = WebApplication.CreateBuilder(args);
 
-applicationSetting = builder.Configuration.GetSection(nameof(ApplicationSetting)).Get<ApplicationSetting>();
-
-new ConfigurationBuilder()
-   .SetBasePath(builder.Environment.ContentRootPath)
-   .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-   .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
-   .AddEnvironmentVariables().Build();
+var appSetting = builder.Configuration.GetSection(nameof(ApplicationSetting)).Get<ApplicationSetting>();
 
 //--------------------------- Services --------------------------------
 // Add services to the container.
 
-builder.Services.AddAppDbContext(applicationSetting.AppDbContextConfig.ConnectionString);
+builder.Services.AddAppDbContext(appSetting.AppDbContextConfig.ConnectionString);
 builder.Services.AddRepository();
 builder.Services.AddAppIdentity();
 
