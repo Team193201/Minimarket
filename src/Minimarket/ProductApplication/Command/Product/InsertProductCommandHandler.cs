@@ -33,5 +33,6 @@ namespace ProductApplication.Command
 
             return new GetProductDto(request.Dto.ProductName, request.Dto.Price, request.Dto.CategoryId, DateTime.UtcNow, default);
         }
+
     }
 }

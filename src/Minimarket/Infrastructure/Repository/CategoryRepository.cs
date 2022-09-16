@@ -22,28 +22,21 @@ namespace Infrastructure.Repository
         {
             return await TableNoTracking.AnyAsync(c => c.CategoryName == name, cancellationToken);
         }
-
+        public async Task<Category> GetCategoryByNameAsync(string name, CancellationToken cancellationToken)
+        {
+            return await TableNoTracking.FirstOrDefaultAsync(p => p.CategoryName.Contains(name), cancellationToken);
+        }
         public async Task<Category> GetCategoryByIdAsync(Guid? id, CancellationToken cancellationToken)
         {
             //TODO does not need use from table 
-            var category = await Table.FirstOrDefaultAsync(c => c.CategoryId == id, cancellationToken);
+            var category = await TableNoTracking.FirstOrDefaultAsync(c => c.CategoryId == id, cancellationToken);
             return category;
         }
 
-        public async Task<Category> UpdateCategoryAsync(Guid? categoryId, CancellationToken cancellationToken)
+        public async Task<Guid?> GetCategoryIdByNameAsync(string name, CancellationToken cancellationToken)
         {
-            if (request != null)
-            {
-                return await Table.Where(c => c.CategoryId == request.CategoryId)
-                      .Select(c => new Category
-                      {
-                          CategoryId = c.CategoryId,
-                          CategoryName = request.Dto.CategoryName,
-                          Description = request.Dto.description,
-                          ModifiDateTime = DateTime.Now
-                      }).FirstOrDefaultAsync();
-            }
-            return null;
+            var category = await TableNoTracking.FirstOrDefaultAsync(c => c.CategoryName.Contains( name), cancellationToken);
+            return category.CategoryId;
         }
     }
 }

@@ -12,17 +12,17 @@ namespace Infrastructure.Repository
 
         }
 
-        public async Task<Product> GetProductAsync(Guid categoryId, Guid productId, CancellationToken cancellationToken)
+        public async Task<Product> GetProductAsync(Guid? categoryId, Guid productId, CancellationToken cancellationToken)
         {
             return await TableNoTracking.FirstOrDefaultAsync(p => p.CategoryId == categoryId && p.ProductId == productId, cancellationToken);
         }
 
-        public async Task<Product> GetProductAsync(Guid categoryId, string productName, CancellationToken cancellationToken)
+        public async Task<Product> GetProductAsync(Guid? categoryId, string productName, CancellationToken cancellationToken)
         {
             return await TableNoTracking.FirstOrDefaultAsync(p => p.CategoryId == categoryId && p.ProductName == productName, cancellationToken);
         }
 
-        public async Task<Product> GetProductAsync(Guid productId, CancellationToken cancellationToken)
+        public async Task<Product> GetProductAsync(Guid? productId, CancellationToken cancellationToken)
         {
             return await TableNoTracking.FirstOrDefaultAsync(p => p.ProductId == productId, cancellationToken);
         }
@@ -36,5 +36,7 @@ namespace Infrastructure.Repository
         {
             return await TableNoTracking.Skip(skip).Take(take is 0 ? 10 : take).ToListAsync(cancellationToken);
         }
+
+
     }
 }

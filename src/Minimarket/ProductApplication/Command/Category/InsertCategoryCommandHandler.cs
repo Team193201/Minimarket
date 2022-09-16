@@ -29,7 +29,7 @@ namespace ProductApplication.Command
             });
             await UnitOfWork.SaveChangesAsync(cancellationToken);
 
-            return new GetCategoryDto(request.Dto.CategoryName, request.Dto.Description, DateTime.UtcNow, default);
+            return new GetCategoryDto( request.Dto.CategoryName, request.Dto.Description, DateTime.UtcNow, default);
         }
     }
 }
