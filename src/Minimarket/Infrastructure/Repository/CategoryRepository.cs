@@ -33,7 +33,7 @@ namespace Infrastructure.Repository
             return category;
         }
 
-        public async Task<Guid?> GetCategoryIdByNameAsync(string name, CancellationToken cancellationToken)
+        public async Task<Guid> GetCategoryIdByNameAsync(string name, CancellationToken cancellationToken)
         {
             var category = await TableNoTracking.FirstOrDefaultAsync(c => c.CategoryName.Contains( name), cancellationToken);
             return category.CategoryId;
