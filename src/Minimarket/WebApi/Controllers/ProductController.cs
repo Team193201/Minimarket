@@ -31,31 +31,24 @@ namespace WebApi.Controllers
             return Ok(new ApiResult(result));
         }
 
-        //[HttpPost("")]
-        //public async Task<IActionResult> Post(InsertProductDto insertProductDto, CancellationToken cancellationToken)
-        //{
-        //    var result = await mediator.Send(new InsertProductCommand(insertProductDto));
-        //    return Ok(new ApiResult(result));
-        //}
-
         [HttpPost("")]
-        public async Task<IActionResult> Post1(Guid? categoryId, ProductFullWithCategoryId productFullWithCategoryId, CancellationToken cancellationToken)
+        public async Task<IActionResult> Post(InsertProductDto insertProductDto, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new ProductFullWithCategoryIdCommand(productFullWithCategoryId));
+            var result = await mediator.Send(new InsertProductCommand(insertProductDto));
             return Ok(new ApiResult(result));
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(Guid id, UpdateProductDto productDto, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new UpdateProductCommand(id, productDto));
+            var result = await mediator.Send(new UpdateProductCommand(id, productDto), cancellationToken);
             return Ok(new ApiResult(result));
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new DeleteProductCommand(id));
+            var result = await mediator.Send(new DeleteProductCommand(id), cancellationToken);
             return Ok(new ApiResult(result));
         }
     }

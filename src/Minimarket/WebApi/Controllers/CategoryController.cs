@@ -31,17 +31,17 @@ namespace WebApi.Controllers
             return Ok(new ApiResult(result));
         }
 
-        //[HttpPost("")]
-        //public async Task<IActionResult> Post(InsertCategoryDto insertCategoryDto, CancellationToken cancellationToken)
-        //{
-        //    var result = await mediator.Send(new InsertCategoryCommand(insertCategoryDto), cancellationToken);
-        //    return Ok(new ApiResult(result));
-        //}
+        [HttpPost("")]
+        public async Task<IActionResult> Post(InsertCategoryDto insertCategoryDto, CancellationToken cancellationToken)
+        {
+            var result = await mediator.Send(new InsertCategoryCommand(insertCategoryDto), cancellationToken);
+            return Ok(new ApiResult(result));
+        }
 
         [HttpPost("")]
-        public async Task<IActionResult> Post(InsertCategoryAndItsProductsDto insertCategoryAndItsProductsDto, CancellationToken cancellationToken)
+        public async Task<IActionResult> Post(InsertCategoryAndProductsDto insertCategoryAndProductsDto, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new InsertCategoryAndItsProductsCommand(insertCategoryAndItsProductsDto), cancellationToken);
+            var result = await mediator.Send(new InsertCategoryAndProductsCommand(insertCategoryAndProductsDto), cancellationToken);
             return Ok(new ApiResult(result));
         }
 
