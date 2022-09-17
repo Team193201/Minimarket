@@ -27,6 +27,7 @@ namespace WebApi.Controllers
         [HttpGet("")]
         public async Task<IActionResult> Get(int take, int skip, CancellationToken cancellationToken)
         {
+            //TODO : not implement category Get take , skip
             var result = await mediator.Send(new GetCategorysQuery(take, skip), cancellationToken);
             return Ok(new ApiResult(result));
         }

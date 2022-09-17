@@ -2,5 +2,5 @@
 
 namespace Sheard.Dto.Category
 {
-    public record GetCategoryAndProductsDto(string CategoryName, string Description, List<InsertProductsDto> products);
+    public record GetCategoryAndProductsDto(string CategoryName, string Description, List<GetProductDto> products);
 }
