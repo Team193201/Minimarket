@@ -14,10 +14,16 @@ namespace ProductApplication.Query.Handler
         }
         public async Task<List<GetProductDto>> Handle(GetProductsQuery request, CancellationToken cancellationToken)
         {
-           var products= await UnitOfWork.ProductRepository.GetProductsAsync(request.Take, request.Skip, cancellationToken);
-
-            //TODO mapping
-            return new List<GetProductDto>();
+            var products = await UnitOfWork.ProductRepository.GetProductsAsync(request.Take, request.Skip, cancellationToken);
+            return products.Select(s => new GetProductDto
+            (
+                s.ProductName,
+                s.Price,
+                s.ProductId,
+                s.CategoryId,
+                s.CreateDateTime,
+                s.ModifiDateTime
+                )).ToList();
         }
     }
 }

@@ -20,18 +20,19 @@ namespace ProductApplication.Command
             if (!existCategory)
                 throw new NullReferenceException("category is not found");
 
+            var productId = Guid.NewGuid();
             UnitOfWork.ProductRepository.AddEntity(new Entities.Product
             {
                 CategoryId = request.Dto.CategoryId,
                 CreateDateTime = DateTime.UtcNow,
                 ModifiDateTime = default(DateTime),
-                ProductId = Guid.NewGuid(),
+                ProductId = productId,
                 ProductName = request.Dto.ProductName,
                 Price = request.Dto.Price,
             });
             await UnitOfWork.SaveChangesAsync(cancellationToken);
 
-            return new GetProductDto(request.Dto.ProductName, request.Dto.Price, request.Dto.CategoryId, DateTime.UtcNow, default);
+            return new GetProductDto(request.Dto.ProductName, request.Dto.Price, productId, request.Dto.CategoryId, DateTime.UtcNow, default);
         }
 
     }

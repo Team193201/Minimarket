@@ -12,15 +12,11 @@ namespace ProductApplication.Query.Category
         {
             unitOfWork = _unitOfWork;
         }
+
         public async Task<GetCategoryDto> Handle(GetCategoryByIdQuery request, CancellationToken cancellationToken)
         {
-            //TODO you frist check exist data and after that get data
-            //there is mistake becuse you send two request to database and this is not well
-            var existCategory = await unitOfWork.CategoryRepository.AnyCategoryIdAsync(request.CategoryId, cancellationToken);
-            if (existCategory)
-            {
-                var category = await unitOfWork.CategoryRepository.GetCategoryByIdAsync(request.CategoryId, cancellationToken);
-                var categoryResult = new GetCategoryDto
+            var category = await unitOfWork.CategoryRepository.GetCategoryByIdAsync(request.CategoryId, cancellationToken);
+            return new GetCategoryDto
                     (
                     category.CategoryId,
                     category.CategoryName,
@@ -28,9 +24,6 @@ namespace ProductApplication.Query.Category
                     category.ModifiDateTime,
                     category.CreateDateTime
                 );
-                return categoryResult;
-            }
-            return null;
         }
     }
 }

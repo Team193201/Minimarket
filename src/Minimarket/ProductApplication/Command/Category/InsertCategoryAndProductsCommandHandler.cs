@@ -46,7 +46,15 @@ namespace ProductApplication.Command.Category
 
             return new GetCategoryAndProductsDto(
                 request.insertCategoryAndProductsDto.CategoryName, request.insertCategoryAndProductsDto.Description,
-                produsts.Select(s => new InsertProductsDto(s.ProductName, s.Price)).ToList());
+                produsts.Select(s 
+                                 => new GetProductDto(
+                                     s.ProductName,
+                                     s.Price,
+                                     s.ProductId,
+                                     s.CategoryId,
+                                     s.CreateDateTime,
+                                     s.ModifiDateTime)
+                                 ).ToList());
         }
     }
 }

@@ -33,7 +33,7 @@ namespace ProductApplication.Command
 
             await UnitOfWork.SaveChangesAsync(cancellationToken);
 
-            return new GetProductDto(product.ProductName, product.Price, product.CategoryId, product.CreateDateTime, product.ModifiDateTime);
+            return new GetProductDto(product.ProductName, product.Price,request.ProductId, product.CategoryId, product.CreateDateTime, product.ModifiDateTime);
         }
     }
 }

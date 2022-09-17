@@ -17,9 +17,7 @@ namespace ProductApplication.Query.Handler
             ArgumentNullException.ThrowIfNull(request.ProductId);
 
             var product = await UnitOfWork.ProductRepository.GetProductAsync(request.ProductId, cancellationToken);
-
-            //TODO mapping
-            return new GetProductDto(product.ProductName, product.Price, product.CategoryId, product.CreateDateTime, product.ModifiDateTime);
+            return new GetProductDto(product.ProductName, product.Price, product.ProductId, product.CategoryId, product.CreateDateTime, product.ModifiDateTime);
         }
     }
 }
