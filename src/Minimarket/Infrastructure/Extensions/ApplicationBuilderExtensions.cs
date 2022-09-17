@@ -19,7 +19,7 @@ namespace Infrastructure.Extensions
                 //Dos not use Migrations, just Create Database with latest changes
                // dbContext.Database.EnsureCreatedAsync(default);
                 //Applies any pending migrations for the context to the database like (Update-Database)
-               // dbContext.Database.MigrateAsync();
+                dbContext.Database.MigrateAsync(default);
             }
         }
 
