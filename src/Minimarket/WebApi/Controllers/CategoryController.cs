@@ -28,7 +28,7 @@ namespace WebApi.Controllers
         public async Task<IActionResult> Get(int take, int skip, CancellationToken cancellationToken)
         {
             //TODO : not implement category Get take , skip
-            var result = await mediator.Send(new GetCategorysQuery(take, skip), cancellationToken);
+            var result = await mediator.Send(new GetCategoreisQuery(take, skip), cancellationToken);
             return Ok(new ApiResult(result));
         }
 
@@ -39,12 +39,12 @@ namespace WebApi.Controllers
             return Ok(new ApiResult(result));
         }
 
-        [HttpPost("")]
-        public async Task<IActionResult> Post(InsertCategoryAndProductsDto insertCategoryAndProductsDto, CancellationToken cancellationToken)
-        {
-            var result = await mediator.Send(new InsertCategoryAndProductsCommand(insertCategoryAndProductsDto), cancellationToken);
-            return Ok(new ApiResult(result));
-        }
+        //[HttpPost("")]
+        //public async Task<IActionResult> Post(InsertCategoryAndProductsDto insertCategoryAndProductsDto, CancellationToken cancellationToken)
+        //{
+        //    var result = await mediator.Send(new InsertCategoryAndProductsCommand(insertCategoryAndProductsDto), cancellationToken);
+        //    return Ok(new ApiResult(result));
+        //}
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(Guid id, UpdateCategoryDto updateCategoryDto, CancellationToken cancellationToken)
