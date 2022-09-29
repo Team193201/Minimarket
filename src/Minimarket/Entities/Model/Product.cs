@@ -12,7 +12,7 @@ namespace Entities
         public string ProductName { get; set; }
 
         [Display(Name = "قیمت"), Required]
-        public decimal Price { get; set; }
+        public int Price { get; set; }
 
         [Display(Name = "تاریخ ایجاد")]
         public DateTime CreateDateTime { get; set; }
