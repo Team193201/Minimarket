@@ -28,7 +28,6 @@ namespace Infrastructure.Repository
         }
         public async Task<Category> GetCategoryByIdAsync(Guid? id, CancellationToken cancellationToken)
         {
-            //TODO does not need use from table 
             var category = await TableNoTracking.FirstOrDefaultAsync(c => c.CategoryId == id, cancellationToken);
             return category;
         }
@@ -37,6 +36,11 @@ namespace Infrastructure.Repository
         {
             var category = await TableNoTracking.FirstOrDefaultAsync(c => c.CategoryName.Contains( name), cancellationToken);
             return category.CategoryId;
+        } 
+
+        public async Task<IEnumerable<Category>> GetCategoreisAsync(int take, int skip, CancellationToken cancellationToken)
+        {
+            return await TableNoTracking.Skip(skip).Take(take is 0 ? 10 : take).ToListAsync(cancellationToken);
         }
     }
 }

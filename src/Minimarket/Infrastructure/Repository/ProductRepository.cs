@@ -36,7 +36,5 @@ namespace Infrastructure.Repository
         {
             return await TableNoTracking.Skip(skip).Take(take is 0 ? 10 : take).ToListAsync(cancellationToken);
         }
-
-
     }
 }
