@@ -12,7 +12,54 @@
             "UpstreamPathTemplate": "/api/v1/category/{id}",
             "UpstreamHttpMethod": [
                 "Get",
-                "Delete"
+                "Delete",
+                "Put"
+            ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/category",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7247
+                }
+            ],
+            "UpstreamPathTemplate": "/api/v1/category",
+            "UpstreamHttpMethod": [
+                "Get",
+                "Post"
+            ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/product/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7247
+                }
+            ],
+            "UpstreamPathTemplate": "/api/v1/product/{id}",
+            "UpstreamHttpMethod": [
+                "Get",
+                "Delete",
+                "Put"
+            ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/product",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7247
+                }
+            ],
+            "UpstreamPathTemplate": "/api/v1/product",
+            "UpstreamHttpMethod": [
+                "Get",
+                "Post"
             ]
         }
     ],
