@@ -1,4 +1,4 @@
 ﻿namespace Sheard.Dto.Product
 {
-    public record InsertProductDto(string ProductName, decimal Price, Guid CategoryId);
+    public record InsertProductDto(string ProductName, int Price, Guid CategoryId);
 }
