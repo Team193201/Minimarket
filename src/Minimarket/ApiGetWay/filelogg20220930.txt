@@ -1,0 +1,148 @@
+
+20:07:10 [Debug] () Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+
+20:07:11 [Debug] () Hosting starting
+
+20:07:11 [Debug] () Using development certificate: "CN=localhost" (Thumbprint: "03ACA90C6F62C7E15FE716339DB964615B0BC7E4")
+
+20:07:11 [Information] () Now listening on: "https://localhost:7275"
+
+20:07:11 [Information] () Now listening on: "http://localhost:5275"
+
+20:07:11 [Debug] () Loaded hosting startup assembly "ApiGetWay"
+
+20:07:11 [Debug] () Loaded hosting startup assembly "Microsoft.AspNetCore.Watch.BrowserRefresh"
+
+20:07:11 [Debug] () Loaded hosting startup assembly "Microsoft.WebTools.BrowserLink.Net"
+
+20:07:11 [Information] () Application started. Press Ctrl+C to shut down.
+
+20:07:11 [Information] () Hosting environment: "Development"
+
+20:07:11 [Information] () Content root path: "E:\githup\Minimarket\src\Minimarket\ApiGetWay\"
+
+20:07:11 [Debug] () Hosting started
+
+20:07:11 [Debug] () Connection id ""0HML30835JMRJ"" received FIN.
+
+20:07:11 [Debug] () Connection id ""0HML30835JMRJ"" accepted.
+
+20:07:11 [Debug] () Connection id ""0HML30835JMRJ"" started.
+
+20:07:11 [Debug] () Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+
+20:07:12 [Debug] () Connection id ""0HML30835JMRJ"" stopped.
+
+20:07:12 [Debug] () Connection id ""0HML30835JMRJ"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+
+20:07:15 [Debug] () Connection id ""0HML30835JMRK"" accepted.
+
+20:07:15 [Debug] () Connection id ""0HML30835JMRK"" started.
+
+20:07:16 [Debug] () Connection "0HML30835JMRK" established using the following protocol: Tls12
+
+20:07:17 [Information] () Request starting HTTP/2 GET https://localhost:7275/swagger/index.html - -
+
+20:07:17 [Debug] () Wildcard detected, all requests with hosts will be allowed.
+
+20:07:18 [Debug] () Response markup is scheduled to include browser refresh script injection.
+
+20:07:19 [Debug] () Response markup was updated to include browser refresh script injection.
+
+20:07:19 [Information] () Request finished HTTP/2 GET https://localhost:7275/swagger/index.html - - - 200 - text/html;charset=utf-8 1813.8166ms
+
+20:07:21 [Information] () Request starting HTTP/2 GET https://localhost:7275/_framework/aspnetcore-browser-refresh.js - -
+
+20:07:21 [Information] () Request finished HTTP/2 GET https://localhost:7275/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 15.7837ms
+
+20:07:24 [Information] () Request starting HTTP/2 GET https://localhost:7275/_vs/browserLink - -
+
+20:07:25 [Information] () Request finished HTTP/2 GET https://localhost:7275/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 74.6514ms
+
+20:07:30 [Information] () Request starting HTTP/2 GET https://localhost:7275/swagger/v1/swagger.json - -
+
+20:07:30 [Information] () Request starting HTTP/2 GET https://localhost:7275/swagger/favicon-32x32.png - -
+
+20:07:30 [Information] () Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"'
+
+20:07:30 [Information] () Request finished HTTP/2 GET https://localhost:7275/swagger/favicon-32x32.png - - - 200 628 image/png 41.3194ms
+
+20:07:30 [Information] () Request finished HTTP/2 GET https://localhost:7275/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 673.6823ms
+
+20:25:36 [Debug] () Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+
+20:25:36 [Debug] () Hosting starting
+
+20:25:36 [Debug] () Using development certificate: "CN=localhost" (Thumbprint: "03ACA90C6F62C7E15FE716339DB964615B0BC7E4")
+
+20:25:37 [Information] () Now listening on: "https://localhost:7275"
+
+20:25:37 [Information] () Now listening on: "http://localhost:5275"
+
+20:25:37 [Debug] () Loaded hosting startup assembly "ApiGetWay"
+
+20:25:37 [Debug] () Loaded hosting startup assembly "Microsoft.AspNetCore.Watch.BrowserRefresh"
+
+20:25:37 [Debug] () Loaded hosting startup assembly "Microsoft.WebTools.BrowserLink.Net"
+
+20:25:37 [Information] () Application started. Press Ctrl+C to shut down.
+
+20:25:37 [Information] () Hosting environment: "Development"
+
+20:25:37 [Information] () Content root path: "E:\githup\Minimarket\src\Minimarket\ApiGetWay\"
+
+20:25:37 [Debug] () Hosting started
+
+20:25:37 [Debug] () Connection id ""0HML30ICNDN4R"" received FIN.
+
+20:25:37 [Debug] () Connection id ""0HML30ICNDN4S"" received FIN.
+
+20:25:37 [Debug] () Connection id ""0HML30ICNDN4S"" accepted.
+
+20:25:37 [Debug] () Connection id ""0HML30ICNDN4R"" accepted.
+
+20:25:37 [Debug] () Connection id ""0HML30ICNDN4S"" started.
+
+20:25:37 [Debug] () Connection id ""0HML30ICNDN4R"" started.
+
+20:25:37 [Debug] () Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+
+20:25:37 [Debug] () Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+
+20:25:37 [Debug] () Connection id ""0HML30ICNDN4S"" stopped.
+
+20:25:37 [Debug] () Connection id ""0HML30ICNDN4R"" stopped.
+
+20:25:37 [Debug] () Connection id ""0HML30ICNDN4R"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+
+20:25:37 [Debug] () Connection id ""0HML30ICNDN4S"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+
+20:25:40 [Debug] () Connection id ""0HML30ICNDN4T"" accepted.
+
+20:25:40 [Debug] () Connection id ""0HML30ICNDN4T"" started.
+
+20:25:41 [Debug] () Connection "0HML30ICNDN4T" established using the following protocol: Tls12
+
+20:25:41 [Information] () Request starting HTTP/2 GET https://localhost:7275/swagger/index.html - -
+
+20:25:41 [Debug] () Wildcard detected, all requests with hosts will be allowed.
+
+20:25:42 [Debug] () Response markup is scheduled to include browser refresh script injection.
+
+20:25:43 [Information] () Request starting HTTP/2 GET https://localhost:7275/_framework/aspnetcore-browser-refresh.js - -
+
+20:25:43 [Debug] () Response markup was updated to include browser refresh script injection.
+
+20:25:43 [Information] () Request finished HTTP/2 GET https://localhost:7275/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 42.2025ms

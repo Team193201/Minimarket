@@ -4,6 +4,7 @@
     {
         public AppDbContextConfig AppDbContextConfig { get; set; }
         public Logging Logging { get; set; }
+        public AppMongoDB AppMongoDB { get; set; }
     }
 
     public class AppDbContextConfig
@@ -20,5 +21,12 @@
     {
         public string Default { get; set; }
         public string MicrosoftAspNetCore { get; set; }
+    }
+
+    public class AppMongoDB
+    {
+        public string ConnectionUrl { get; set; }
+        public string DatabaseName { get; set; }
+        public List<string> CollectionNames { get; set; } = new();
     }
 }

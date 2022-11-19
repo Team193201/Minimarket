@@ -2,11 +2,11 @@
 
 namespace IdnetityServer.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/auth")]
     [ApiController]
-    public class AccountController : ControllerBase
+    public class AuthController : ControllerBase
     {
-        public AccountController()
+        public AuthController()
         {
 
         }
